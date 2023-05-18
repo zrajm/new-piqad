@@ -1,0 +1,867 @@
+g<!DOCTYPE html><!--*-ispell-dictionary:"sv";js-indent-level:2;css-indent-offset:2-*-->
+<!-- Copyright 2023 by zrajm. Released under GPLv3 license. -->
+<meta charset="UTF-8">
+<link rel="preload" href="font-hasta.woff2" as="font" type="font/woff2">
+<link rel="preload" href="font-kapiqad.woff2" as="font" type="font/woff2">
+<link rel="preload" href="font-mandel.woff2" as="font" type="font/woff2">
+<link rel="preload" href="font-startrekpi.woff2" as="font" type="font/woff2">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Towards a New pIqaD<title>
+<style>
+@font-face {
+  font-family: "KApIqaD Roman Medium";
+  src: url("font-kapiqad.woff2");
+}
+@font-face {
+  font-family: "Klingon pIqaD HaSta";
+  src: url("font-hasta.woff2");
+}
+@font-face {
+  font-family: "Klingon Mandel";
+  src: url("font-mandel.woff2");
+}
+@font-face {
+    font-family: "StarTrekPiBT";
+    src: url("font-startrekpi.woff2");
+}
+html {
+  font-family: sans;
+  font-size: 22px;
+  line-height: 1.6;
+}
+p {
+    margin-bottom: 0;
+}
+p + .float-left + p,
+p + .float-right + p,
+p:not(:empty) + p {
+    margin-top: 0;
+    text-indent: 2em;
+}
+p[id^=fn] {
+    padding-left: 2em;
+    text-indent: -2em;
+}
+a {
+    text-decoration: none;
+}
+a[href^="#fn"] {
+    position: relative;
+    bottom: .5em;
+    font-size: smaller;
+}
+a:hover {
+    text-decoration: underline;
+    background: #00f2;
+}
+a:hover img {
+    outline: .5em solid #00f2;
+}
+table.skybox-glyphs {
+    line-height: 1;
+}
+table.skybox-glyphs td, table.skybox-glyphs th {
+    text-align: center;
+}
+table.skybox-glyphs td {
+    font-family: "Klingon pIqaD HaSta";
+    font-size: 3rem;
+    vertical-align: top;
+}
+table.skybox-glyphs td i {
+    display: block;
+    font-size: 1rem;
+    font-family: sans;
+}
+table.skybox-glyphs td:after {
+    content: "(" attr(comment) ")";
+    font-size: .75rem;
+    line-height: 1.75;
+    display: block;
+    font-family: sans;
+}
+table.skybox-glyphs td:before {
+    content: attr(piqad);
+    line-height: 1.75;
+    font-family: "KApIqaD Roman Medium";
+    background: #00f4;
+    font-size: 2rem;
+    margin-right: .125rem;
+}
+li {
+    margin: .5rem 1rem;
+}
+img {
+    vertical-align: top;
+}
+.float-left {
+    float: left;
+    margin: 0 1rem;
+    display: block;
+}
+.float-right {
+    float: right;
+    margin: 0 1rem;
+    display: block;
+}
+figure {
+    display: inline-block;
+    border: 1px solid #000;
+    vertical-align: top;
+    margin: 2rem .5rem 1rem;
+    text-align: center;
+}
+figure img {
+    margin: .25rem;
+}
+figcaption {
+    margin: .25rem;
+    text-align: center;
+}
+.big { font-size: 1.75rem; }
+.pi { font-family: "StarTrekPiBT" }
+.pi.big { font-size: 2rem; line-height: 1.4 }
+.ka { font-family: "KApIqaD Roman Medium" }
+.mn { font-family: "Klingon pIqaD HaSta" }
+.mn.big { font-size: 2.1rem; line-height: 1.2 }
+.ml { font-family: "Klingon Mandel" }
+
+table.glyphs {
+    border-collapse: collapse;
+    margin: .5rem;
+    line-height: 1.4;
+}
+table.glyphs td, table.glyphs td {
+    border: 1px solid #0004;
+    padding: .25rem .5rem;
+}
+figure.center {
+  display: block;
+  width: fit-content;
+  margin: 1rem auto;
+}
+blockquote {
+    border-left: .5rem solid #8888;
+    padding-left: .5rem;
+}
+footer {
+  border-top: 2px solid #000;
+  text-align: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+</style>
+
+<h1>Towards a New <b>pIqaD</b></h1>
+
+<blockquote class="entry-summary">
+  This is a gathering of notes in preparation for a future project to design a
+  new <b>pIqaD</b> font for writing Klingon. The purpose of the font is to
+  preserve (regain?) the look and feel of signage in the various Star Trek
+  series, yet also imbue them with meaning by allowing that they be written
+  in <i>proper</i> Klingon.
+
+  <br><span class="pale" style="display:block;margin-top:1rem">
+    /zrajm, <time pubdate="" datetime="2023-05-18">May 2023</time>
+  </span>
+</blockquote>
+
+<p>This page is a place where I’m gathering ideas and guiding principles
+for <i>Teh Ultimate Klingon <b>pIqaD</b> typeface</i>. This will be the dense,
+spiky writing you remember from <i>The Next Generation</i> and <i>Deep Space
+Nine,</i> but imbued with actual Klingon meaning, with crisp details and sharp
+points (rather than the slightly amorphous shapes of the <b>veS QonoS</b>
+interpretation).
+
+<p><p>In short, this typeface will change future history as we know
+it!—<i>Retroactively.</i>
+
+<figure class=this style="width:fit-content;display:block;margin: 2rem auto">
+  <style>
+    td[todo] {
+        background-image: url("data:image/svg+xml,<svg width='10' height='10' xmlns='http://www.w3.org/2000/svg'><path stroke='%23888' d='M 0,0 10,10'/></svg>");
+    }
+  </style>
+  <table class=glyphs>
+    <tr>
+      <td done title="Pi glyph"><div class="big pi">j</div>a
+      <td todo title=""><div class="big ka"></div>b
+      <td done title="Pi {ng} rotated 90° clockwise"><div class="big pi" style="transform: rotate(90deg);font-size:2.5rem;margin-bottom:-.5rem;position:relative;top:-4px">l</div>ch
+      <td done title="Pi {y} rotated 180°"><div class="big pi" style="transform: rotate(180deg)">m</div>D
+      <td todo title=""><div class="big ka"></div>e
+      <td done title="Pi glyph"><div class="big pi">i</div>gh
+      <td todo title=""><div class="big ka"></div>H
+      <td todo title=""><div class="big ka"></div>I
+      <td todo title=""><div class="big ka"></div>j
+      <td done title="Pi glyph"><div class="big pi">e</div>l
+      <td todo title=""><div class="big ka"></div>m
+      <td done title="Pi glyph"><div class="big pi">f</div>n
+      <td done title="Pi glyph"><div class="big pi">l</div>ng
+    </tr>
+    <tr>
+      <td todo title=""><div class="big ka"></div>o
+      <td done title="HaSta glyph"><div class="big mn"></div>p
+      <td done title="HaSta glyph"><div class="big mn"></div>q
+      <td todo title=""><div class="big ka"></div>Q
+      <td done title="Pi glyph"><div class="big pi">g</div>r
+      <td todo title=""><div class="big ka"></div>S
+      <td todo title=""><div class="big ka"></div>t
+      <td todo title=""><div class="big ka"></div>tlh
+      <td todo title=""><div class="big ka"></div>u
+      <td done title="Pi glyph"><div class="big pi">h</div>v
+      <td done title="Pi glyph"><div class="big pi">n</div>w
+      <td done title="Pi glyph"><div class="big pi">m</div>y
+      <td todo title="“Sleeping Dogs” glyph"><div class="big mn"></div>’
+    </tr>
+    <tr>
+      <td todo title=""><div class="big ka"></div>0
+      <td todo title=""><div class="big ka"></div>1
+      <td todo title=""><div class="big ka"></div>2
+      <td todo title=""><div class="big ka"></div>3
+      <td todo title=""><div class="big ka"></div>4
+      <td todo title=""><div class="big ka"></div>5
+      <td todo title=""><div class="big ka"></div>6
+      <td todo title=""><div class="big ka"></div>7
+      <td todo title=""><div class="big ka"></div>8
+      <td todo title=""><div class="big ka"></div>9
+      <td done title="KA-pIqaD glyph"><div class="big ka"></div>,;:
+      <td done title="KA-pIqaD glyph"><div class="big ka"></div>.!?
+      <td done title="Pi glyph"><div class="big pi">c</div> 
+    </tr>
+  </table>
+  <figcaption>
+    <b>A sketch of the new, prettier <b>pIqaD</b>.</b>
+    <br>Slashed background indicate undecided glyphs.
+    <br>(The <i>Star Trek Pi</i> glyph <span class="pi" style="margin:-1rem .125rem;font-size:1.3rem;display:inline-block;vertical-align:middle">k</span> is not used here.)
+  </figcaption>
+</figure>
+
+<figure style="margin:2rem auto;display:block;width:fit-content">
+  <table class=glyphs>
+    <tr>
+      <td><div class="big ka"></div>a
+      <td><div class="big ka"></div>b
+      <td><div class="big ka"></div>ch
+      <td><div class="big ka"></div>D
+      <td><div class="big ka"></div>e
+      <td><div class="big ka"></div>gh
+      <td><div class="big ka"></div>H
+      <td><div class="big ka"></div>I
+      <td><div class="big ka"></div>j
+      <td><div class="big ka"></div>l
+      <td><div class="big ka"></div>m
+      <td><div class="big ka"></div>n
+      <td><div class="big ka"></div>ng
+    </tr>
+    <tr>
+      <td><div class="big ka"></div>o
+      <td><div class="big ka"></div>p
+      <td><div class="big ka"></div>q
+      <td><div class="big ka"></div>Q
+      <td><div class="big ka"></div>r
+      <td><div class="big ka"></div>S
+      <td><div class="big ka"></div>t
+      <td><div class="big ka"></div>tlh
+      <td><div class="big ka"></div>u
+      <td><div class="big ka"></div>v
+      <td><div class="big ka"></div>w
+      <td><div class="big ka"></div>y
+      <td><div class="big ka"></div>’
+    </tr>
+    <tr>
+      <td><div class="big ka"></div>0
+      <td><div class="big ka"></div>1
+      <td><div class="big ka"></div>2
+      <td><div class="big ka"></div>3
+      <td><div class="big ka"></div>4
+      <td><div class="big ka"></div>5
+      <td><div class="big ka"></div>6
+      <td><div class="big ka"></div>7
+      <td><div class="big ka"></div>8
+      <td><div class="big ka"></div>9
+      <td><div class="big ka"></div>,;:
+      <td><div class="big ka"></div>.!?
+      <td><div class="big ka"></div> 
+    </tr>
+  </table>
+  <figcaption>
+    <b>Best currently available pIqaD.</b>
+    <br>The symbols in the <i>Klingonska Akademien</i>’s <b>pIqaD</b>.
+  </figcaption>
+</figure>
+
+
+<h2>In Star Trek</h2>
+
+<p>Klingon signage, as seen in the various incarnations of <i>Star Trek,</i>
+used to be devoid of linguistic content. From the very beginning, however,
+there existed distinct Klingon visual <i>style,</i> and written text seen
+in <i>The Next Generation</i> and <i>Deep Space Nine</i> may have been
+nonsense, but it was easily recognizable as clearly Klingon, and consisted of a
+small distinct set of characters arranged to form “words”. None of these
+characters had sound or meaning assigned to them.
+
+<p><b>TOS “Elaan of Troyius” (1968):</b> This very first glimpse of written
+Klingon actually predates the spoken language by quite a number of years, and
+comes in the shape of hull markings on a Klingon warship. Unfortunately the
+characters are not legible on screen, but behind-the-scene photos of the model
+used for filming the episodes, as well as design notes by Matt Jefferies show
+us what they look like
+  (<i>Star Trek Sketchbook: The Original Series,</i> 1997; <i><a target=_blank
+href="https://www.ex-astris-scientia.org/inconsistencies/klingon_emblem.htm">The
+Evolution of the Klingon Emblem</a>, 2023</i>;
+<i><a href="https://airandspace.si.edu/collection-objects/model-d7-klingon-battle-cruiser-star-trek/nasm_A19740482000">Smithsonian:
+Model, D7 Klingon Battle Cruiser, “Star Trek”</a></i>; <i><a href="https://forgottentrek.com/the-original-series/designing-the-klingon-battle-cruiser/">Forgotten Trek: Designing the Klingon Battle Cruiser</a></i>, 2005):
+
+<p>The characters can be read as “D74” using <i>Klin Mura</i> character set
+(<a href="#veS-QonoS">below</a>). Whether or this reading is the original
+intent—the ship is a “D7-class battle cruiser”—or a retcon is harder to tell,
+as the D7 designation was not used in the original series (nor given the Matt
+Jefferies’ original notes as published in <i>Star Trek Sketchbook</i>).
+
+<p>Looking at the characters one by one, and comparing them to the now commonly
+used <b>pIqaD</b> we find that the first character doesn’t resemble anything at
+all, while the second character <i>might</i> be said to resemble an <b>m</b>
+and the third definitely look like the number <b>4</b>. Also, the look of the
+characters line up more with the <i>Mandel</i> character sets
+than <b>pIqaD</b>.
+
+
+<div style="text-align:center">
+  <figure style="width:500px;padding-top:.5rem">
+    <a href="tos-d7-sketch.png"><img style="width:calc(100% - 1rem)" src="tos-d7-sketch.png"></a>
+    <figcaption>
+      Text from Klingon warship by Matt Jefferies (<i>Star Trek Sketchbook: The
+        Original Series,</i> 1997, p.82).
+    </figcaption>
+  </figure>
+  <figure style="width:500px;padding-top:.5rem">
+    <a href="tos-d7-model.jpg" style="overflow:hidden;display:inline-block;"><img style="width:calc(100% - 1rem);margin:0px 0 -80px 0" src="tos-d7-model.jpg"></a>
+    <figcaption>
+      Top view of detail of the original model
+      (“<a href="https://airandspace.si.edu/collection-objects/model-d7-klingon-battle-cruiser-star-trek/nasm_A19740482000">Smithsonian:
+        Model, D7 Klingon Battle Cruiser, ‘Star Trek’</a>”).
+    </figcaption>
+  </figure>
+</div>
+
+<p><p><b>Star Trek: The Motion Picture (1979):</b> The Klingon battle cruiser
+from the original series returns, but, since finer details where discernible on
+the big screen, a new model with more intricate surface detailing was created.
+We also see Klingon characters used on various displays in the interior shots
+of the Klingon bridge.
+
+<figure style="width:800px;display:block;margin:2rem auto">
+  <a href="st1-gunner.png">
+    <img style="width:calc(100% - 1rem)" src="st1-gunner.png">
+  </a>
+  <figcaption>
+    A display on the Klingon bridge (the glyph at the end of the first word is
+    unique to this movie. (<i>Star Trek: The Motion Picture,</i> 1979)
+  </figcaption>
+</figure>
+
+
+<h2>Connection to the Language</h2>
+
+<figure id="veS-QonoS" style="width:350px" class=float-right>
+  <a href="ves-qonos.jpg">
+    <img style="width:calc(100% - 1rem);transform:rotate(-.75deg);" src="ves-qonos.jpg">
+  </a>
+  <figcaption>
+    First published version of <b>pIqaD</b> (<a href="http://klingon.wiki/En/PIqaDHistory"><i><b>veS QonoS</b>,</i> 1989</a>).
+  </figcaption>
+</figure>
+
+<p>The <b>pIqaD</b> characters we use for writing Klingon were first revealed
+in 1989, in the newsletter <i><b>veS QonoS</i></b> (“War Journal”) of the now
+defunct Klingon fan group <i>Mortas-Te-Kaase.</i> The illustration in <b>veS
+QonoS</b> contains two sets
+of <i><a href="http://klingon.wiki/En/Mandel-Script">Mandel characters</a>,</i>
+as well as two slightly different versions of <b>pIqaD</b> (labeled <i>Rumaiy
+Klin Bur-Chak</i> and <i>Klin Zhan-Bur</i>) and a handwritten signature (at the
+top of the page) also in <b>pIqaD</b>.—For rest of this article I’ll only be
+discussing the <b>pIqaD</b> character sets (ignoring the Mandel sets), and,
+unless specifically noted, it is the <i>Klin Zhan-Bur</i> characters I’m
+talking about (since, over time, these alone has come to be regarded as the
+official writing system of the Klingons).
+
+<p>In the nineties, <i>The Klingon Language Institute</i> (KLI) made a floppy
+disk with a couple of different Klingon fonts available for purchase. One of
+these fonts was
+the <a href="http://klingon.wiki/En/KLIpIqaDmeyNote"><i>KLI <b>pIqaDmey</b></i></a>,
+created in 1992 by Lawrence M. Schoen (the founder and, at the time, director
+of KLI). <i>KLI <b>pIqaDmey</b></i> contained the Klingon letters and numbers
+(though no punctuation marks, as these only appeared later). The glyphs in this
+font are faithful reproductions of those found in <b>veS QonoS</b>, and have
+become the de-facto standard for the appearance of <b>pIqaD</b>.
+
+
+<figure class=center style="margin-top:2rem">
+  <table class=glyphs>
+    <tr>
+      <td><div class="big ka"></div>a
+      <td><div class="big ka"></div>b
+      <td><div class="big ka"></div>ch
+      <td><div class="big ka"></div>D
+      <td><div class="big ka"></div>e
+      <td><div class="big ka"></div>gh
+      <td><div class="big ka"></div>H
+      <td><div class="big ka"></div>I
+      <td><div class="big ka"></div>j
+      <td><div class="big ka"></div>l
+      <td><div class="big ka"></div>m
+      <td><div class="big ka"></div>n
+      <td><div class="big ka"></div>ng
+    </tr>
+    <tr>
+      <td><div class="big ka"></div>o
+      <td><div class="big ka"></div>p
+      <td><div class="big ka"></div>q
+      <td><div class="big ka"></div>Q
+      <td><div class="big ka"></div>r
+      <td><div class="big ka"></div>S
+      <td><div class="big ka"></div>t
+      <td><div class="big ka"></div>tlh
+      <td><div class="big ka"></div>u
+      <td><div class="big ka"></div>v
+      <td><div class="big ka"></div>w
+      <td><div class="big ka"></div>y
+      <td><div class="big ka"></div>’
+    </tr>
+    <tr>
+      <td><div class="big ka"></div>0
+      <td><div class="big ka"></div>1
+      <td><div class="big ka"></div>2
+      <td><div class="big ka"></div>3
+      <td><div class="big ka"></div>4
+      <td><div class="big ka"></div>5
+      <td><div class="big ka"></div>6
+      <td><div class="big ka"></div>7
+      <td><div class="big ka"></div>8
+      <td><div class="big ka"></div>9
+    </tr>
+  </table>
+  <figcaption>
+    The glyphs of the font <i>KLI <b>pIqaDmey</b></i> (Lawrence M. Schoen,
+    1992).
+  </figcaption>
+</figure>
+
+<figure class=center style="margin-top:2rem">
+  <table class=glyphs>
+    <tr>
+      <td><div class="big ml">A</div>a
+      <td><div class="big ml">B</div>b
+      <td><div class="big ml">D</div>d
+      <td><div class="big ml">E</div>e
+      <td><div class="big ml">F</div>f
+      <td><div class="big ml">G</div>g
+      <td><div class="big ml">H</div>h
+      <td><div class="big ml">I</div>i
+      <td><div class="big ml">J</div>j
+      <td><div class="big ml">K</div>k
+      <td><div class="big ml">L</div>l
+      <td><div class="big ml">M</div>m
+      <td><div class="big ml">Q</div>n
+    </tr>
+    <tr>
+      <td><div class="big ml">N</div>ng
+      <td><div class="big ml">O</div>o
+      <td><div class="big ml">C</div>oo
+      <td><div class="big ml">P</div>p
+      <td><div class="big ml">R</div>r
+      <td><div class="big ml">S</div>s
+      <td><div class="big ml">T</div>t
+      <td><div class="big ml">U</div>u
+      <td><div class="big ml">V</div>v
+      <td><div class="big ml">W</div>w
+      <td><div class="big ml">X</div>x
+      <td><div class="big ml">Y</div>y
+      <td><div class="big ml">Z</div>z
+    </tr>
+    <tr>
+      <td><div class="big ml">0</div>0
+      <td><div class="big ml">1</div>1
+      <td><div class="big ml">2</div>2
+      <td><div class="big ml">3</div>3
+      <td><div class="big ml">4</div>4
+      <td><div class="big ml">5</div>5
+      <td><div class="big ml">6</div>6
+      <td><div class="big ml">7</div>7
+      <td><div class="big ml">8</div>8
+      <td><div class="big ml">9</div>9
+    </tr>
+  </table>
+  <figcaption>
+    The glyphs of the font <i>Mandel</i>
+  </figcaption>
+</figure>
+
+
+<h2>Punctuation Enters the Game</h2>
+
+<div class=float-right>
+  <figure class=center style=margin-top:0>
+    <a href="sbx-sp1b.jpg"><img width=200 src="sbx-sp1b.jpg"></a>
+    <a href="sbx-sp2b.jpg"><img width=200 src="sbx-sp2b.jpg"></a>
+    <a href="sbx-sp3b.jpg"><img width=200 src="sbx-sp3b.jpg"></a>
+    <figcaption>
+      Punctuation. (<a href="http://klingonska.org/canon/sbx-sp1.html">SkyBox cards SP1–SP3, 1994</a>)
+    </figcaption>
+  </figure>
+  <figure class=center>
+    <a href="sbx-s13b.jpg"><img width=200 src="sbx-s13b.jpg"></a>
+    <a href="sbx-s14b.jpg"><img width=200 src="sbx-s14b.jpg"></a>
+    <a href="sbx-s15b.jpg"><img width=200 src="sbx-s15b.jpg"></a>
+    <figcaption>
+      More punctuation. (<a href="http://klingonska.org/canon/sbx-s13.html">SkyBox cards S13–S15, 1995</a>)
+    </figcaption>
+  </figure>
+</div>
+
+<p>In 1994, SkyBox published the <i>Star Trek</i> collectible
+cards <a href="http://klingonska.org/canon/sbx-sp1.html">SP1, SP2 and SP3</a>.
+Each of the cards contains a paragraph of random text written in
+the <a href="#star-trek-pi"><i>Star Trek Pi</i> font</a>, a snippet of actual
+Klingon (written in Latin letters) and an English translation of that text. One
+thing is new, however, in that the nonsense text also contain filled black
+triangles (either pointing up or down) which looks as if they are acting like
+some kind of punctuation marks.
+
+<p>In 1995 and 1996, these cards were followed up with additional cards which
+also makes use of the triangles
+(<a href="http://klingonska.org/canon/sbx-s7.html">S7–S9</a>
+and <a href="http://klingonska.org/canon/sbx-s13.html">S13–S15</a> in 1995,
+and <a href="http://klingonska.org/canon/sbx-s19.html">S19–S21</a> in 1996).
+There were additional Klingon cards published after this as well, but nowhere
+did the black triangles reappear.
+
+<p>On most of the cards (though not all) the punctuation triangles are
+separated from surrounding words with extra space (written as if they were
+words in their own right). I find this neat-looking, since the triangles
+themselves are quite heavy on the page.
+
+
+<h2>Entering Canon</h2>
+
+<figure class=float-right style=padding:.5rem>
+  <a href="haynes-manual.jpg" style="display:inline-block">
+    <img width=200 src="haynes-manual.jpg">
+  </a>
+  <figcaption>
+    Haynes Bird-of-Prey<br>Manual (2012).
+  </figcaption>
+</figure>
+
+<p>In 2012 Haynes published their <i>Klingon Bird-of-Prey: Owner’s Workshop
+Manual,</i> which, among other things contained text written in <b>pIqaD</b>.
+And since this is an officially sanctioned, licensed product it meant that the
+Klingon writing took another step towards full canonicity. And this time, the
+text was genuine and actual Klingon was being written! The fonts used is this
+book (<a href="https://www.evertype.com/fonts/tlh/"><i><b>pIqaD HaSta</b></i>
+and <i><b>pIqaD vaHbo’</b></i></a>) were designed by Mike Neff (<b>qa’vaj</b>)
+and released to the wider world in 2009.
+
+<p>Unfortunately (in my opinion), though the <i><b>pIqaD HaSta</b></i> look a
+lot more like what we see on-screen than <i>KLI <b>pIqaDmey</b></i> does, some
+of the glyphs are just off doing their own thing for no god reason, deviating
+quite a bit from the <b>pIqaD</b> we got from <b>veS QonoS</b>. This is true
+for the vowel <b>I</b>, for <b>tlh</b> (which just have <i>weird</i> shapes),
+<b>e</b> (which looks to much like <b>w</b>), <b>o</b> (which seem partially
+mirrored) etc.
+
+
+Some glyphs of the <b>HaSta</b> font (like <b>p</b>, <b>q</b> and <b>r</b>) are
+very neat interpretations but not <i>quite</i> there (but lack only the detail
+“crispness” of the SkyBox cards), others (like <b>tlh</b> and the
+vowel <b>I</b>) break away to far from the KLI <b>pIqaD</b> mold making them
+too hard to recognize for my taste.
+
+
+<h1>What Should a Good <b>pIqaD</b> Look Like?</h1>
+
+<ul>
+  <li>Uniform look and kerning.
+
+  <li>A font similar to the like signage seen in TNG and similar. The idea is
+  to follow <i>KLI <b>pIqaDmey</b></i> as closely as possible, yet also make
+  the glyphs less amorphous and blobby, and more like a proper writing system.
+
+  <figure class=center>
+    <a href="tng-example.png">
+      <img src="tng-example.png">
+    </a>
+    <figcaption>
+      TNG era <b>pIqaD</b> (<i>Star Trek Encyclopedia,</i> 1st ed, 1994).
+    </figcaption>
+  </figure>
+
+  <li>Retain the fine, crisp details of the font on the SkyBox cards, with very
+  sharp endings of the strokes. The glyphs below are from the <i>Star Trek
+  Pi</i> font that came with the official <i>Star Trek Font Pack</i>, and as
+  far as I can tell these were the glyphs used on the SkyBox trading cards.
+
+  <figure id="star-trek-pi" class="center">
+    <table class="glyphs" style="line-height:1">
+      <tr>
+        <td><div class="big pi">a</div>a
+        <td><div class="big pi">b</div>b
+        <td><div class="big pi">c</div>c
+        <td><div class="big pi">d</div>d
+        <td><div class="big pi">e</div>e
+        <td><div class="big pi">f</div>f
+        <td><div class="big pi">g</div>g
+        <td><div class="big pi">h</div>h
+        <td><div class="big pi">i</div>i
+        <td><div class="big pi">j</div>j
+        <td><div class="big pi">k</div>k
+        <td><div class="big pi">l</div>l
+        <td><div class="big pi">m</div>m
+        <td><div class="big pi">n</div>n</tr>
+    </table>
+    <caption>
+      The typeface “Star Trek Pi” from the <i>Star Trek Font Pack</i>.
+      <br>(<i><a target=_blank
+        href="https://typesetinthefuture.com/2020/08/17/startrek/">Typeset in the
+        Future: Star Trek: The Motion Picture</a></i>, 2020)
+    </caption>
+  </figure>
+
+  <li>Wide spacing surrounding period and comma triangles.
+
+  <li>Good visual distinction between problematic characters.
+  (Especially <b>p</b>, <b>q</b> and <b>Q</b>.)
+
+  <li>Glyph alignment accenting the top of the glyphs (i.e. a baseline at the
+  top from which all the glyphs hang down, somewhat similar to Devanagari).
+
+  <figure>
+    <img width=250 src="sbx-s8-part.png"><!--
+    --><img width=250 src="sbx-sp2-part.png">
+    <br><img width=250 src="sbx-s13-part.png"><!--
+    --><img width=250 src="sbx-s27-part.png">
+    <br><img width=250 src="sbx-s31-part.png"><!--
+    --><img width=250 src="sbx-s32-part.png">
+    <figcaption>
+      SkyBox <b>pIqaD</b> examples.
+    </figcaption>
+  </figure>
+</ul>
+
+
+<h2>Glyph-by-Glyph Thoughts</h2>
+
+<figure id="qaghwI’" style="display:flex" class=float-right>
+  <a style="height:100%;margin:.5rem" href="ent-sleeping-dogs.png">
+    <img style="height:100%" src="ent-sleeping-dogs.png">
+  </a>
+  <figcaption style="width:200px;margin: .5rem;text-align: left">
+    A previously unseen <b>qaghwI’</b> adorning on-screen signage. Hoshi
+    helpfully translates this sign as meaning “Deck 2, red sector”. (<i>Star
+    Trek: Enterprise</i> 1:14, “Sleeping Dogs”, 00:10:21)
+  </figcaption>
+</figure>
+
+<p>These are the glyphs:
+
+<p><b>a</b> – Unmodified <i>Star Trek Pi</i> glyph.
+
+<p><b>b</b> 
+
+<p><b>ch</b> – <i>Star Trek Pi</i> glyph rotated 90° clockwise, and made
+slightly taller.
+
+<p><b>D</b> – <i>Star Trek Pi</i> glyph rotated 180°. A break should be added
+in the bottom line, and maybe the top line should be elongated and slightly
+bent to the right.
+
+<p><b>e</b> 
+
+<p><b>gh</b> – Unmodified <i>Star Trek Pi</i> glyph.
+
+<p><b>H</b> – This glyph is a scrawny little thing. Keep it like that for
+recognizability? Or make it a bit larger to have it fit in better with the
+appearance of the rest of the glyphs?
+
+<p><b>I</b> 
+
+<p><b>j</b> 
+
+<p><b>l</b> – Unmodified <i>Star Trek Pi</i> glyph.
+
+<p><b>m</b> 
+
+<p><b>n</b> – Unmodified <i>Star Trek Pi</i> glyph.
+
+<p><b>ng</b> – Unmodified <i>Star Trek Pi</i> glyph. The glyph has a stronger
+downwards line than in the <i>KLI <b>pIqaDmey</b>.</i>
+
+<p><b>o</b> 
+
+<p><b>p</b> 
+
+<p><b>q</b> 
+
+<p><b>Q</b> 
+
+<p><b>r</b> – Unmodified <i>Star Trek Pi</i> glyph.
+
+<p><b>S</b> – Use a modified version of one of the glyphs from gunner controls
+in <i>Star Trek: The Motion Picture</i>?
+
+<p><b>t</b> – (This can be seen as a vertically flipped version of <b>6</b>.)
+
+<p><b>tlh</b> 
+
+<p><b>u</b> 
+
+<p><b>v</b> – Unmodified <i>Star Trek Pi</i> glyph. Note, however, that this
+glyph differs from the <i>KLI <b>pIQaDmey</b></i> in that the right vertical
+line descends in <i>Star Trek Pi</i>, while it does not do this
+in <i>KLI <b>pIQaDmey</b>.</i>
+
+<p><b>w</b> – Unmodified <i>Star Trek Pi</i> glyph.
+
+<p><b>y</b> – Unmodified <i>Star Trek Pi</i> glyph.
+
+<p><b>’</b> – Use the <a href="#qaghwI’">glyph</a> that occurs in signage in
+the <i>Star Trek Enterprise</i> episode “Sleeping Dogs”.
+
+<p><b>0</b> – I think this occur on a secondary display on the Klingon bridge
+in <i>Star Trek: The Motion Picture</i>, though unfortunately there’s a lot
+blur, so that probably won’t help much in defining the shape of the glyph.
+
+<p><b>1</b> 
+
+<p><b>2</b> 
+
+<p><b>3</b> 
+
+<p><b>4</b> – Use glyph from original series D7 batteship by Matt Jefferies?
+
+<p><b>5</b> 
+
+<p><b>6</b> – (This can be seen as a vertically flipped version of <b>t</b>.)
+
+<p><b>7</b> 
+
+<p><b>8</b> 
+
+<p><b>9</b> 
+
+<p><b>,;:</b> – This downward pointing triangle should be moved slightly down
+(for optical balance).
+
+<p><b>.!?</b> – This upward pointing triangle should be moved slightly up (for
+optical balance).
+
+<p><b> </b> – Empire symbol. Unmodified <i>Star Trek Pi</i> glyph.
+
+
+<h1>Episodes</h1>
+
+<p>This is a list of Klingon-centric episodes, intended as a basis of research.
+(episodes with only series regulars Worf or B’Elanna are not included). This
+list need to be expanded with later movies and series, and each episode need to
+be search for written Klingon.
+
+<p>First column indicates whether or not research has been done for a given
+episode. “✓” indicates that research has been done, and “✗ indicates that
+research still remain to do for that episode.
+
+<style>
+  table.episodes {
+    margin: 1.5rem 2rem;
+    border-collapse: collapse;
+    line-height: 1.5;
+  }
+  table.episodes td {
+    padding: 0 .25rem;
+    border: 1px solid #000;
+    vertical-align: top;
+    background: #00f4;
+  }
+  table.episodes .movie {
+      background: #00f8;
+  }
+</style>
+<table class=episodes>
+  <tr><th style="writing-mode:vertical-lr">Done<th>Date<br><small>YYYY-MM-DD</small><th colspan=2>Series/<br>Number<th>Episode Name<th>Note
+  <tr><td>✗<td>1967-03-23<td>TOS<td>1x26<td>Errand of Mercy<td>Kor
+  <tr><td>✗<td>1967-12-29<td>TOS<td>2x15<td>The Trouble with Tribbles<td>Koloth, Korax
+  <tr><td>✗<td>1968-11-01<td>TOS<td>3x07<td>Day of the Dove<td>Kang, Mara
+  <tr><td>✗<td>1968-12-20<td>TOS<td>3x13<td>Elaan of Troyius<td>Klingon warship with Empire symbol
+  <tr><td>✗<td>1969-03-07<td>TOS<td>3x22<td>The Savage Curtain<td>Kahless
+  <tr><td>✗<td>1973-10-06<td>TAS<td>1x5<td>More Tribbles, More Troubles<td>Koloth, Korax
+  <tr><td>✗<td>1973-11-24<td>TAS<td>1x12<td>Time Trap<td>Kuri, Kor, Kali, Kaz
+  <tr class=movie><td>✓<td>1979-12-07<td>ST1<td>–<td><i>The Motion Picture</i><td>Various Klingon screens (at beginning of movie)
+  <tr class=movie><td>✗<td>1984-06-01<td>ST3<td>–<td><i>The Search for Spock</i><td>Maltz, Torg, Kruge, Valkris, IKC Amar, d’k tahg, kellicam, Qapla’
+  <tr class=movie><td>✗<td>1986-11-26<td>ST4<td>–<td><i>The Voyage Home</i><td>Klingon Ambassador
+  <tr><td>✗<td>1988-03-21<td>TNG<td>1x20<td>Heart of Glory<td>
+  <tr><td>✗<td>1989-02-06<td>TNG<td>2x08<td>A Matter of Honor<td>
+  <tr class=movie><td>✗<td>1989-06-09<td>ST5<td>–<td><i>The Final Frontier</i><td>Klaa, Korrd, Vixis, Qui’Tu (the center of all creation)
+  <tr><td>✗<td>1989-06-26<td>TNG<td>2x20<td>The Emissary<td>
+  <tr><td>✗<td>1989-07-17<td>TNG<td>2x22<td>Shades of Gray<td>
+  <tr><td>✗<td>1990-03-19<td>TNG<td>3x17<td>Sins of the Father<td>
+  <tr><td>✗<td>1990-11-05<td>TNG<td>4x07<td>Reunion<td>
+  <tr><td>✗<td>1991-06-17<td>TNG<td>4x26<td>Redemption<td>
+  <tr><td>✗<td>1991-09-23<td>TNG<td>5x01<td>Redemption II<td>
+  <tr class=movie><td>✗<td>1991-12-06<td>ST6<td>–<td><i>The Undiscovered Country</i><td>Gorkon, Azetbur, Chang, Worf, Kerla, Klingon Ambassador, Praxis, Kronos
+  <tr><td>✗<td>1992-01-06<td>TNG<td>5x10<td>New Ground<td>
+  <tr><td>✗<td>1992-03-02<td>TNG<td>5x16<td>Ethics<td>
+  <tr><td>✗<td>1992-04-20<td>TNG<td>5x20<td>Cost of Living<td>
+  <tr><td>✗<td>1992-05-04<td>TNG<td>5x22<td>Imaginary Friend<td>
+  <tr><td>✗<td>1992-11-02<td>TNG<td>6x07<td>Rascals<td>
+  <tr><td>✗<td>1992-11-09<td>TNG<td>6x08<td>A Fistful of Datas<td>
+  <tr><td>✗<td>1993-02-22<td>TNG<td>6x16<td>Birthright: Part 1<td>
+  <tr><td>✗<td>1993-03-01<td>TNG<td>6x17<td>Birthright: Part 2<td>
+  <tr><td>✗<td>1993-05-17<td>TNG<td>6x23<td>Rightful Heir<td>
+  <tr><td>✗<td>1994-03-27<td>DS9<td>2x19<td>Blood Oath<td>⇒ <b>maj ram</b>
+  <tr><td>✗<td>1994-04-25<td>TNG<td>7x21<td>Firstborn<td>
+  <tr><td>✗<td>1994-10-10<td>DS9<td>3x03<td>The House of Quark<td>
+  <tr class=movie><td>✗<td>1994-11-18<td>ST7<td>–<td><i>Generations</i><td>Worf, Lursa, B’Etor
+  <tr><td>✗<td>1995-10-02<td>DS9<td>4x01<td>The Way of the Warrior (Part 1)<td>
+  <tr><td>✗<td>1995-10-02<td>DS9<td>4x02<td>The Way of the Warrior (Part 2)<td>(???)
+  <tr><td>✗<td>1995-11-20<td>DS9<td>4x08<td>The Sword of Kahless<td>
+  <tr><td>✗<td>1996-02-12<td>DS9<td>4x14<td>Sons of Mogh<td>
+  <tr><td>✗<td>1996-06-17<td>DS9<td>4x25<td>Broken Link<td>
+  <tr><td>✗<td>1996-09-30<td>DS9<td>5x01<td>Apocalype Rising<td>
+  <tr><td>✗<td>1996-10-14<td>DS9<td>5x03<td>Looking for par’Mach in All the Wrong Places<td>
+  <tr><td>✗<td>1997-02-10<td>DS9<td>5x14<td>In Purgatory’s Shadow (Part 1)<td>
+  <tr><td>✗<td>1997-02-17<td>DS9<td>5x15<td>By Inferno’s Light (Part 2)<td>
+  <tr><td>✗<td>1997-04-28<td>DS9<td>5x21<td>Soldiers of the Empire<td>
+  <tr><td>✗<td>1997-05-12<td>DS9<td>5x23<td>Blaze of Glory<td>
+  <tr><td>✗<td>1997-06-16<td>DS9<td>5x26<td>Call to Arms<td>
+  <tr><td>✗<td>1997-09-29<td>DS9<td>6x01<td>A Time to Stand<td>
+  <tr><td>✗<td>1997-10-13<td>DS9<td>6x03<td>Sons and Daughters<td>
+  <tr><td>✗<td>1997-10-27<td>DS9<td>6x05<td>Favor the Bold (Part 1)<td>
+  <tr><td>✗<td>1997-11-03<td>DS9<td>6x06<td>Sacrifice of Angels (Part 2)<td>
+  <tr><td>✗<td>1997-11-10<td>DS9<td>6x07<td>You Are Cordially Invited…<td>
+  <tr><td>✗<td>1998-02-11<td>DS9<td>6x13<td>Far Beyond the Stars<td>
+  <tr><td>✗<td>1998-06-17<td>DS9<td>6x26<td>Tears of the Prophets<td>
+  <tr><td>✗<td>1998-09-30<td>DS9<td>7x01<td>Image in the Sand<td>
+  <tr><td>✗<td>1998-10-07<td>DS9<td>7x02<td>Shadows and Symbols<td>
+  <tr><td>✗<td>1998-11-04<td>DS9<td>7x06<td>Treachery, Faith, and the Great River<td>
+  <tr><td>✗<td>1998-11-11<td>DS9<td>7x07<td>Once More Unto the Breach<td>
+  <tr><td>✗<td>1999-02-03<td>DS9<td>7x12<td>The Emperor’s New Cloak<td>
+  <tr><td>✗<td>1999-04-21<td>DS9<td>7x19<td>Strange Bedfellows<td>
+  <tr><td>✗<td>1999-04-28<td>DS9<td>7x20<td>The Changing Face of Evil<td>
+  <tr><td>✗<td>1999-05-05<td>DS9<td>7x21<td>When It Rains…<td>
+  <tr><td>✗<td>1999-05-12<td>DS9<td>7x22<td>Tacking Into the Wind<td>
+  <tr><td>✗<td>1999-05-26<td>DS9<td>7x24<td>The Dogs of War<td>
+  <tr><td>✗<td>1999-06-02<td>DS9<td>7x25<td>What You Leave Behind (Part 1)<td>
+  <tr><td>✗<td>1999-06-02<td>DS9<td>7x26<td>What You Leave Behind (Part 2)<td>(???)
+  <tr><td>✗<td>1999-10-06<td>VOY<td>6x03<td>Barge of the dead<td>
+  <tr><td>✗<td>2001-02-07<td>VOY<td>7x14<td>Prophecy<td>
+  <tr><td>✗<td>2001-09-26<td>ENT<td>1x01<td>Broken Bow (Part 1)<td>
+  <tr><td>✗<td>2001-09-26<td>ENT<td>1x02<td>Broken Bow (Part 2)<td>(???)
+  <tr><td>✗<td>2002-01-30<td>ENT<td>1x14<td>Sleeping Dogs<td>A written <b>qaghwI’</b> is seen
+  <tr><td>✗<td>2003-04-09<td>ENT<td>2x19<td>Judgement<td>
+  <tr><td>✗<td>2004-11-12<td>ENT<td>4x06<td>The Augments<td>
+  <tr><td>✗<td>2005-01-21<td>ENT<td>4x11<td>Observer Effect<td>
+  <tr><td>✗<td>2005-02-18<td>ENT<td>4x15<td>Affliction<td>
+</table>
+
+<footer>Written by zrajm, Uppsala, May 2023.</footer>
+<!--[eof]-->
