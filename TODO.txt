@@ -1,0 +1,10 @@
+-*- org -*-
+
+* [0/3]
+** TODO Add more images from Lower Decks etc
+** TODO Add Buffy episode Seeing Red image
+** TODO Remove "SkyBox pIqaD examples" as it is illustrated with font
+* FINISHED
+** DONE Move all images to 'pic' directory
+   CLOSED: [2023-05-22 Mon 17:56]
+* [eof]
