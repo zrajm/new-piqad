@@ -1,28 +1,98 @@
-<!DOCTYPE html><!--*-ispell-dictionary:"sv";js-indent-level:2;css-indent-offset:2-*-->
+<!DOCTYPE html><!--*-ispell-dictionary:"en";js-indent-level:2;css-indent-offset:2-*-->
 <!-- Copyright 2023 by zrajm. Released under GPLv3 license. -->
 <meta charset="UTF-8">
-<link rel="preload" href="font-hasta.woff2" as="font" type="font/woff2">
-<link rel="preload" href="font-kapiqad.woff2" as="font" type="font/woff2">
-<link rel="preload" href="font-mandel.woff2" as="font" type="font/woff2">
-<link rel="preload" href="font-startrekpi.woff2" as="font" type="font/woff2">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel=preload href="font/startrekpi.woff2" as=font type="font/woff2">
+<link rel=preload href="font/kapiqad.woff2" as=font type="font/woff2">
+<link rel=preload href="font/qurgh.woff2" as=font type="font/woff2">
+<link rel=preload href="font/bing.woff2" as=font type="font/woff2">
+<link rel=preload href="font/hasta.woff2" as=font type="font/woff2">
+<link rel=preload href="font/mandel.woff2" as=font type="font/woff2">
+<link rel=preload href="font/vahbo.woff2" as=font type="font/woff2">
+<link rel=preload href="font/comic.woff2" as=font type="font/woff2">
+<link rel=preload href="font/code2000.woff2" as=font type="font/woff2">
+<link rel=preload href="font/nokia.woff2" as=font type="font/woff2">
+<link rel=preload href="font/mopasan.woff2" as=font type="font/woff2">
+<link rel=preload href="font/din.woff2" as=font type="font/woff2">
+<link rel=preload href="font/discovery.woff2" as=font type="font/woff2">
+<link rel=preload href="font/horta.woff2" as=font type="font/woff2">
+<link rel=preload href="font/mandel-english.woff2" as=font type="font/woff2">
+<meta name=viewport content="width=device-width,initial-scale=1">
 <title>Towards a New pIqaD</title>
 <style>
 @font-face {
+  font-family: "Star Trek Pi BT";
+  src: url("font/startrekpi.woff2");
+  unicode-range: U+0061-006E; /* a–n */
+}
+@font-face {
   font-family: "KApIqaD Roman Medium";
-  src: url("font-kapiqad.woff2");
+  src: url("font/kapiqad.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
+}
+@font-face {
+  font-family: "qurgh pIqaD";
+  src: url("font/qurgh.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
+}
+@font-face {
+  font-family: "Bing pIqaD Medium";
+  src: url("font/bing.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
 }
 @font-face {
   font-family: "Klingon pIqaD HaSta";
-  src: url("font-hasta.woff2");
+  src: url("font/hasta.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
 }
 @font-face {
-  font-family: "Klingon Mandel";
-  src: url("font-mandel.woff2");
+  font-family: "Klingon pIqaD Mandel";
+  src: url("font/mandel.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
 }
 @font-face {
-    font-family: "StarTrekPiBT";
-    src: url("font-startrekpi.woff2");
+  font-family: "Klingon pIqaD vaHbo";
+  src: url("font/vahbo.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
+}
+@font-face {
+  font-family: "Comic Sans pIqaD";
+  src: url("font/comic.woff2");
+  unicode-range: U+0020-007E; /* xifan-hol */
+}
+@font-face {
+  font-family: "Code 2000";
+  src: url("font/code2000.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
+}
+@font-face {
+  font-family: "Nokia Pure Klingon";
+  src: url("font/nokia.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
+}
+@font-face {
+  font-family: "Mopasan Pikad";
+  src: url("font/mopasan.woff2");
+  unicode-range: U+0020-007E; /* xifan-hol */
+}
+@font-face {
+  font-family: "DIn pIqaD";
+  src: url("font/din.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
+}
+@font-face {
+  font-family: "Discovery pIqaD";
+  src: url("font/discovery.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
+}
+@font-face {
+  font-family: "Horta";
+  src: url("font/horta.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
+}
+@font-face {
+  font-family: "English Mandel";
+  src: url("font/mandel-english.woff2");
+  unicode-range: U+0020-007E; /* Ascii */
 }
 html {
   font-family: sans;
@@ -30,119 +100,154 @@ html {
   line-height: 1.6;
 }
 p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 p + .float-left + p,
 p + .float-right + p,
 p:not(:empty) + p {
-    margin-top: 0;
-    text-indent: 2em;
+  margin-top: 0;
+  text-indent: 1.5rem;
 }
-p[id^=fn] {
-    padding-left: 2em;
-    text-indent: -2em;
+p[id^=fn], .hanging p {
+  padding-left: 1.5rem;
+  text-indent: -1.5rem !important;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 a[href^="#fn"] {
-    position: relative;
-    bottom: .5em;
-    font-size: smaller;
+  position: relative;
+  bottom: .5em;
+  font-size: smaller;
 }
 a:hover {
-    text-decoration: underline;
-    background: #00f2;
+  text-decoration: underline;
+  background: #00f2;
 }
 a:hover img {
-    outline: .5em solid #00f2;
+  outline: .5em solid #00f2;
 }
 table.skybox-glyphs {
-    line-height: 1;
+  line-height: 1;
 }
 table.skybox-glyphs td, table.skybox-glyphs th {
-    text-align: center;
+  text-align: center;
 }
 table.skybox-glyphs td {
-    font-family: "Klingon pIqaD HaSta";
-    font-size: 3rem;
-    vertical-align: top;
+  font-family: "Klingon pIqaD HaSta";
+  font-size: 3rem;
+  vertical-align: top;
 }
 table.skybox-glyphs td i {
-    display: block;
-    font-size: 1rem;
-    font-family: sans;
+  display: block;
+  font-size: 1rem;
+  font-family: sans;
 }
 table.skybox-glyphs td:after {
-    content: "(" attr(comment) ")";
-    font-size: .75rem;
-    line-height: 1.75;
-    display: block;
-    font-family: sans;
+  content: "(" attr(comment) ")";
+  font-size: .75rem;
+  line-height: 1.75;
+  display: block;
+  font-family: sans;
 }
 table.skybox-glyphs td:before {
-    content: attr(piqad);
-    line-height: 1.75;
-    font-family: "KApIqaD Roman Medium";
-    background: #00f4;
-    font-size: 2rem;
-    margin-right: .125rem;
+  content: attr(piqad);
+  line-height: 1.75;
+  font-family: "KApIqaD Roman Medium";
+  background: #00f4;
+  font-size: 2rem;
+  margin-right: .125rem;
 }
 li {
-    margin: .5rem 1rem;
+  margin: .5rem 1rem;
 }
 img {
-    vertical-align: top;
+  vertical-align: top;
 }
 .float-left {
-    float: left;
-    margin: 0 1rem;
-    display: block;
+  float: left;
+  margin: 0 1rem;
+  display: block;
 }
 .float-right {
-    float: right;
-    margin: 0 1rem;
-    display: block;
+  float: right;
+  margin: 0 1rem;
+  display: block;
 }
 figure {
-    display: inline-block;
-    border: 1px solid #000;
-    vertical-align: top;
-    margin: 2rem .5rem 1rem;
-    text-align: center;
+  display: inline-block;
+  border: 1px solid #000;
+  vertical-align: top;
+  margin: 2rem .5rem 1rem;
+  text-align: center;
 }
 figure img {
-    margin: .25rem;
+  margin: .25rem;
 }
 figcaption {
-    margin: .25rem;
-    text-align: center;
+  margin: .25rem;
+  text-align: center;
 }
 .big { font-size: 1.75rem; }
-.pi { font-family: "StarTrekPiBT" }
-.pi.big { font-size: 2rem; line-height: 1.4 }
+.comic { font-family: "Comic Sans pIqaD" }
+.bing {  font-family: "Bing pIqaD Medium" }
+.code2000 { font-family: "Code 2000" }
+.din { font-family: "DIn pIqaD" }
+.discovery { font-family: "Discovery pIqaD" }
+.hasta { font-family: "Klingon pIqaD HaSta" }
+.hasta.big { font-size: 2.1rem; line-height: 1.2 }
+.horta { font-family: "Horta" }
 .ka { font-family: "KApIqaD Roman Medium" }
-.mn { font-family: "Klingon pIqaD HaSta" }
-.mn.big { font-size: 2.1rem; line-height: 1.2 }
-.ml { font-family: "Klingon Mandel" }
+.mandel { font-family: "English Mandel" }
+.mandel-piqad { font-family: "Klingon pIqaD Mandel" }
+.mopasan { font-family: "Mopasan Pikad" }
+.nokia { font-family: "Nokia Pure Klingon" }
+.qurgh { font-family: "qurgh pIqaD" }
+.startrekpi { font-family: "Star Trek Pi BT" }
+.startrekpi.big { font-size: 2rem; line-height: 1.4 }
+.vahbo { font-family: "Klingon pIqaD vaHbo" }
+
+.lspace { margin-left: .125em }
+.rspace { margin-right: .125em }
+
+span.startrekpi, span.ka {
+  position: relative;
+  line-height: 0;
+}
+span.startrekpi {
+  font-size: 1.3em;
+  top: .15em;
+}
+span.ka {
+  font-size: 1.1em;
+  top: .125em;
+}
 
 table.glyphs {
-    border-collapse: collapse;
-    margin: .5rem;
-    line-height: 1.4;
+  border-collapse: collapse;
+  margin: .5rem;
+  line-height: 1.4;
 }
+table.glyphs th { font-family: sans; font-size:.75rem; font-weight: normal; color:#888; }
+table.glyphs th:first-child { padding-right:.25em; text-align: right; color: #888; }
 table.glyphs td, table.glyphs td {
-    border: 1px solid #0004;
-    padding: .25rem .5rem;
+  border: 1px solid #0004;
+  padding: .25rem .5rem;
 }
+table.glyphs td:empty { background: #8883; }
 figure.center {
   display: block;
   width: fit-content;
   margin: 1rem auto;
 }
+/* Scrollbar for wide table */
+figure.center {
+  overflow-x: auto;
+  max-width: 100%;
+}
 blockquote {
-    border-left: .5rem solid #8888;
-    padding-left: .5rem;
+  border-left: .5rem solid #8888;
+  padding-left: .5rem;
 }
 footer {
   border-top: 2px solid #000;
@@ -161,7 +266,7 @@ footer {
   series, yet also imbue them with meaning by allowing that they be written
   in <i>proper</i> Klingon.
 
-  <br><span class="pale" style="display:block;margin-top:1rem">
+  <br><span class=pale style="display:block;margin-top:1rem">
     /zrajm, <time pubdate="" datetime="2023-05-18">May 2023</time>
   </span>
 </blockquote>
@@ -176,42 +281,42 @@ interpretation).
 <p><p>In short, this typeface will change future history as we know
 it!—<i>Retroactively.</i>
 
-<figure class=this style="width:fit-content;display:block;margin: 2rem auto">
+<figure class=center style="width:fit-content;display:block;margin: 2rem auto">
   <style>
     td[todo] {
-        background-image: url("data:image/svg+xml,<svg width='10' height='10' xmlns='http://www.w3.org/2000/svg'><path stroke='%23888' d='M 0,0 10,10'/></svg>");
+      background-image: url("data:image/svg+xml,<svg width='10' height='10' xmlns='http://www.w3.org/2000/svg'><path stroke='%23888' d='M 0,0 10,10'/></svg>");
     }
   </style>
   <table class=glyphs>
     <tr>
-      <td done title="Pi glyph"><div class="big pi">j</div>a
+      <td done title="Pi glyph"><div class="big startrekpi">j</div>a
       <td todo title=""><div class="big ka"></div>b
-      <td done title="Pi {ng} rotated 90° clockwise"><div class="big pi" style="transform: rotate(90deg);font-size:2.5rem;margin-bottom:-.5rem;position:relative;top:-4px">l</div>ch
-      <td done title="Pi {y} rotated 180°"><div class="big pi" style="transform: rotate(180deg)">m</div>D
+      <td done title="Pi {ng} rotated 90° clockwise"><div class="big startrekpi" style="transform: rotate(90deg);font-size:2.5rem;margin-bottom:-.5rem;position:relative;top:-4px">l</div>ch
+      <td done title="Pi {y} rotated 180°"><div class="big startrekpi" style="transform: rotate(180deg)">m</div>D
       <td todo title=""><div class="big ka"></div>e
-      <td done title="Pi glyph"><div class="big pi">i</div>gh
+      <td done title="Pi glyph"><div class="big startrekpi">i</div>gh
       <td todo title=""><div class="big ka"></div>H
       <td todo title=""><div class="big ka"></div>I
       <td todo title=""><div class="big ka"></div>j
-      <td done title="Pi glyph"><div class="big pi">e</div>l
+      <td done title="Pi glyph"><div class="big startrekpi">e</div>l
       <td todo title=""><div class="big ka"></div>m
-      <td done title="Pi glyph"><div class="big pi">f</div>n
-      <td done title="Pi glyph"><div class="big pi">l</div>ng
+      <td done title="Pi glyph"><div class="big startrekpi">f</div>n
+      <td done title="Pi glyph"><div class="big startrekpi">l</div>ng
     </tr>
     <tr>
       <td todo title=""><div class="big ka"></div>o
-      <td done title="HaSta glyph"><div class="big mn"></div>p
-      <td done title="HaSta glyph"><div class="big mn"></div>q
+      <td done title="HaSta glyph"><div class="big hasta"></div>p
+      <td done title="HaSta glyph"><div class="big hasta"></div>q
       <td todo title=""><div class="big ka"></div>Q
-      <td done title="Pi glyph"><div class="big pi">g</div>r
+      <td done title="Pi glyph"><div class="big startrekpi">g</div>r
       <td todo title=""><div class="big ka"></div>S
       <td todo title=""><div class="big ka"></div>t
       <td todo title=""><div class="big ka"></div>tlh
       <td todo title=""><div class="big ka"></div>u
-      <td done title="Pi glyph"><div class="big pi">h</div>v
-      <td done title="Pi glyph"><div class="big pi">n</div>w
-      <td done title="Pi glyph"><div class="big pi">m</div>y
-      <td todo title="“Sleeping Dogs” glyph"><div class="big mn"></div>’
+      <td done title="Pi glyph"><div class="big startrekpi">h</div>v
+      <td done title="Pi glyph"><div class="big startrekpi">n</div>w
+      <td done title="Pi glyph"><div class="big startrekpi">m</div>y
+      <td todo title="“Sleeping Dogs” glyph"><div class="big hasta"></div>’
     </tr>
     <tr>
       <td todo title=""><div class="big ka"></div>0
@@ -226,17 +331,18 @@ it!—<i>Retroactively.</i>
       <td todo title=""><div class="big ka"></div>9
       <td done title="KA-pIqaD glyph"><div class="big ka"></div>,;:
       <td done title="KA-pIqaD glyph"><div class="big ka"></div>.!?
-      <td done title="Pi glyph"><div class="big pi">c</div> 
+      <td done title="Pi glyph"><div class="big startrekpi">c</div>¶
     </tr>
   </table>
   <figcaption>
     <b>A sketch of the new, prettier <b>pIqaD</b>.</b>
     <br>Slashed background indicate undecided glyphs.
-    <br>(The <i>Star Trek Pi</i> glyph <span class="pi" style="margin:-1rem .125rem;font-size:1.3rem;display:inline-block;vertical-align:middle">k</span> is not used here.)
+    <br>(The <i>Star Trek Pi</i> glyph <span class="startrekpi lspace">k</span>
+    is not used here.)
   </figcaption>
 </figure>
 
-<figure style="margin:2rem auto;display:block;width:fit-content">
+<figure class=center style="margin:2rem auto;display:block;width:fit-content">
   <table class=glyphs>
     <tr>
       <td><div class="big ka"></div>a
@@ -306,12 +412,14 @@ Klingon actually predates the spoken language by quite a number of years, and
 comes in the shape of hull markings on a Klingon warship. Unfortunately the
 characters are not legible on screen, but behind-the-scene photos of the model
 used for filming the episodes, as well as design notes by Matt Jefferies show
-us what they look like
-  (<i>Star Trek Sketchbook: The Original Series,</i> 1997; <i><a target=_blank
+us what they look like (<i>Star Trek Sketchbook: The Original Series,</i>
+1997; <i><a target=_blank
 href="https://www.ex-astris-scientia.org/inconsistencies/klingon_emblem.htm">The
-Evolution of the Klingon Emblem</a>, 2023</i>;
-<i><a href="https://airandspace.si.edu/collection-objects/model-d7-klingon-battle-cruiser-star-trek/nasm_A19740482000">Smithsonian:
-Model, D7 Klingon Battle Cruiser, “Star Trek”</a></i>; <i><a href="https://forgottentrek.com/the-original-series/designing-the-klingon-battle-cruiser/">Forgotten Trek: Designing the Klingon Battle Cruiser</a></i>, 2005):
+Evolution of the Klingon Emblem</a>,
+2023</i>; <i><a href="https://airandspace.si.edu/collection-objects/model-d7-klingon-battle-cruiser-star-trek/nasm_A19740482000">Smithsonian:
+Model, D7 Klingon Battle Cruiser, “Star
+Trek”</a></i>; <i><a href="https://forgottentrek.com/the-original-series/designing-the-klingon-battle-cruiser/">Forgotten
+Trek: Designing the Klingon Battle Cruiser</a></i>, 2005):
 
 <p>The characters can be read as “D74” using <i>Klin Mura</i> character set
 (<a href="#veS-QonoS">below</a>). Whether or this reading is the original
@@ -326,7 +434,6 @@ and the third definitely look like the number <b>4</b>. Also, the look of the
 characters line up more with the <i>Mandel</i> character sets
 than <b>pIqaD</b>.
 
-
 <div style="text-align:center">
   <figure style="width:500px;padding-top:.5rem">
     <a href="tos-d7-sketch.png"><img style="width:calc(100% - 1rem)" src="tos-d7-sketch.png"></a>
@@ -335,6 +442,7 @@ than <b>pIqaD</b>.
         Original Series,</i> 1997, p.82).
     </figcaption>
   </figure>
+
   <figure style="width:500px;padding-top:.5rem">
     <a href="tos-d7-model.jpg" style="overflow:hidden;display:inline-block;"><img style="width:calc(100% - 1rem);margin:0px 0 -80px 0" src="tos-d7-model.jpg"></a>
     <figcaption>
@@ -351,7 +459,7 @@ the big screen, a new model with more intricate surface detailing was created.
 We also see Klingon characters used on various displays in the interior shots
 of the Klingon bridge.
 
-<figure style="width:800px;display:block;margin:2rem auto">
+<figure class=center style="width:800px;display:block;margin:2rem auto">
   <a href="st1-gunner.png">
     <img style="width:calc(100% - 1rem)" src="st1-gunner.png">
   </a>
@@ -395,7 +503,6 @@ of KLI). <i>KLI <b>pIqaDmey</b></i> contained the Klingon letters and numbers
 (though no punctuation marks, as these only appeared later). The glyphs in this
 font are faithful reproductions of those found in <b>veS QonoS</b>, and have
 become the de-facto standard for the appearance of <b>pIqaD</b>.
-
 
 <figure class=center style="margin-top:2rem">
   <table class=glyphs>
@@ -451,50 +558,51 @@ become the de-facto standard for the appearance of <b>pIqaD</b>.
 <figure id=mandel class=center style="margin-top:2rem">
   <table class=glyphs>
     <tr>
-      <td><div class="big ml">A</div>a
-      <td><div class="big ml">B</div>b
-      <td><div class="big ml">D</div>d
-      <td><div class="big ml">E</div>e
-      <td><div class="big ml">F</div>f
-      <td><div class="big ml">G</div>g
-      <td><div class="big ml">H</div>h
-      <td><div class="big ml">I</div>i
-      <td><div class="big ml">J</div>j
-      <td><div class="big ml">K</div>k
-      <td><div class="big ml">L</div>l
-      <td><div class="big ml">M</div>m
-      <td><div class="big ml">Q</div>n
+      <td><div class="big mandel">A</div>a
+      <td><div class="big mandel">B</div>b
+      <td><div class="big mandel">D</div>d
+      <td><div class="big mandel">E</div>e
+      <td><div class="big mandel">F</div>f
+      <td><div class="big mandel">G</div>g
+      <td><div class="big mandel">H</div>h
+      <td><div class="big mandel">I</div>i
+      <td><div class="big mandel">J</div>j
+      <td><div class="big mandel">K</div>k
+      <td><div class="big mandel">L</div>l
+      <td><div class="big mandel">M</div>m
+      <td><div class="big mandel">Q</div>n
     </tr>
     <tr>
-      <td><div class="big ml">N</div>ng
-      <td><div class="big ml">O</div>o
-      <td><div class="big ml">C</div>oo
-      <td><div class="big ml">P</div>p
-      <td><div class="big ml">R</div>r
-      <td><div class="big ml">S</div>s
-      <td><div class="big ml">T</div>t
-      <td><div class="big ml">U</div>u
-      <td><div class="big ml">V</div>v
-      <td><div class="big ml">W</div>w
-      <td><div class="big ml">X</div>x
-      <td><div class="big ml">Y</div>y
-      <td><div class="big ml">Z</div>z
+      <td><div class="big mandel">N</div>ng
+      <td><div class="big mandel">O</div>o
+      <td><div class="big mandel">C</div>oo
+      <td><div class="big mandel">P</div>p
+      <td><div class="big mandel">R</div>r
+      <td><div class="big mandel">S</div>s
+      <td><div class="big mandel">T</div>t
+      <td><div class="big mandel">U</div>u
+      <td><div class="big mandel">V</div>v
+      <td><div class="big mandel">W</div>w
+      <td><div class="big mandel">X</div>x
+      <td><div class="big mandel">Y</div>y
+      <td><div class="big mandel">Z</div>z
     </tr>
     <tr>
-      <td><div class="big ml">0</div>0
-      <td><div class="big ml">1</div>1
-      <td><div class="big ml">2</div>2
-      <td><div class="big ml">3</div>3
-      <td><div class="big ml">4</div>4
-      <td><div class="big ml">5</div>5
-      <td><div class="big ml">6</div>6
-      <td><div class="big ml">7</div>7
-      <td><div class="big ml">8</div>8
-      <td><div class="big ml">9</div>9
+      <td><div class="big mandel">0</div>0
+      <td><div class="big mandel">1</div>1
+      <td><div class="big mandel">2</div>2
+      <td><div class="big mandel">3</div>3
+      <td><div class="big mandel">4</div>4
+      <td><div class="big mandel">5</div>5
+      <td><div class="big mandel">6</div>6
+      <td><div class="big mandel">7</div>7
+      <td><div class="big mandel">8</div>8
+      <td><div class="big mandel">9</div>9
     </tr>
   </table>
   <figcaption>
-    The glyphs of the <i>Mandel</i> script.
+    The glyphs of the <i>Mandel</i> alphabet
+    <br>(for English, there’s a separate set for <a href="#comparison">Klingon</a>).
   </figcaption>
 </figure>
 
@@ -571,7 +679,6 @@ for the vowel <b>I</b>, for <b>tlh</b> (which just have <i>weird</i> shapes),
 <b>e</b> (which looks to much like <b>w</b>), <b>o</b> (which seem partially
 mirrored) etc.
 
-
 Some glyphs of the <b>HaSta</b> font (like <b>p</b>, <b>q</b> and <b>r</b>) are
 very neat interpretations but not <i>quite</i> there (but lack only the detail
 “crispness” of the SkyBox cards), others (like <b>tlh</b> and the
@@ -579,7 +686,7 @@ vowel <b>I</b>) break away to far from the KLI <b>pIqaD</b> mold making them
 too hard to recognize for my taste.
 
 
-<h1>What Should a Good <b>pIqaD</b> Look Like?</h1>
+<h1>What Should Good <b>pIqaD</b> Look Like?</h1>
 
 <ul>
   <li>Uniform look and kerning.
@@ -602,23 +709,23 @@ too hard to recognize for my taste.
   Pi</i> font that came with the official <i>Star Trek Font Pack</i>, and as
   far as I can tell these were the glyphs used on the SkyBox trading cards.
 
-  <figure id="star-trek-pi" class="center">
-    <table class="glyphs" style="line-height:1">
+  <figure id="star-trek-pi" class=center>
+    <table class=glyphs style="line-height:1">
       <tr>
-        <td><div class="big pi">a</div>a
-        <td><div class="big pi">b</div>b
-        <td><div class="big pi">c</div>c
-        <td><div class="big pi">d</div>d
-        <td><div class="big pi">e</div>e
-        <td><div class="big pi">f</div>f
-        <td><div class="big pi">g</div>g
-        <td><div class="big pi">h</div>h
-        <td><div class="big pi">i</div>i
-        <td><div class="big pi">j</div>j
-        <td><div class="big pi">k</div>k
-        <td><div class="big pi">l</div>l
-        <td><div class="big pi">m</div>m
-        <td><div class="big pi">n</div>n</tr>
+        <td><div class="big startrekpi">a</div>a
+        <td><div class="big startrekpi">b</div>b
+        <td><div class="big startrekpi">c</div>c
+        <td><div class="big startrekpi">d</div>d
+        <td><div class="big startrekpi">e</div>e
+        <td><div class="big startrekpi">f</div>f
+        <td><div class="big startrekpi">g</div>g
+        <td><div class="big startrekpi">h</div>h
+        <td><div class="big startrekpi">i</div>i
+        <td><div class="big startrekpi">j</div>j
+        <td><div class="big startrekpi">k</div>k
+        <td><div class="big startrekpi">l</div>l
+        <td><div class="big startrekpi">m</div>m
+        <td><div class="big startrekpi">n</div>n</tr>
     </table>
     <caption>
       The typeface “Star Trek Pi” from the <i>Star Trek Font Pack</i>.
@@ -653,114 +760,351 @@ too hard to recognize for my taste.
 <h2>Glyph-by-Glyph Thoughts</h2>
 
 <figure id="qaghwI’" style="display:flex" class=float-right>
-  <a style="height:100%;margin:.5rem" href="ent-sleeping-dogs.png">
-    <img style="height:100%" src="ent-sleeping-dogs.png">
+  <a style="height:100%;margin:.5rem" href="pic/ent-1x14.png">
+    <img style="height:100%" src="pic/ent-1x14.png">
   </a>
   <figcaption style="width:200px;margin: .5rem;text-align: left">
     A previously unseen <b>qaghwI’</b> adorning on-screen signage. Hoshi
     helpfully translates this sign as meaning “Deck 2, red sector”. (<i>Star
-    Trek: Enterprise</i> 1:14, “Sleeping Dogs”, 00:10:21)
+    Trek: Enterprise,</i> episode 1:14 “Sleeping Dogs”, 00:10:21)
   </figcaption>
 </figure>
 
-<p>These are the glyphs:
+<p>Below I use “original <b>pIqaD</b>” to refer to the writing system described
+in <i><b>veS QonoS</b></i> (which is implemented by the
+fonts <i>KLI <b>pIqaDmey</b>, KA-<b>pIqaD</b>, <b>pIqaD</b> by <b>qurgh</b></i>
+and possibly others).
 
-<p><b>a</b> – Unmodified <i>Star Trek Pi</i> glyph.
+<style>
+  .xx:empty:before {
+    content: "◌";
+    color: #8888;
+    font-size: 1.3rem;
+    line-height: .8rem;
+  }
+  .xx {
+    text-indent: 0 !important;
+    display: inline-block !important;
+    width: 1rem !important;
+    height: 1rem !important;
+    text-align: center;
+  }
+  .xx + .xx {
+    width: 1.5rem !important;
+    text-align: left;
+    width: auto !important;
+    XXbackground: #8889;
+  }
+</style>
 
-<p><b>b</b> 
+<div class=hanging>
 
-<p><b>ch</b> – <i>Star Trek Pi</i> glyph rotated 90° clockwise, and made
-slightly taller.
+  <p><span class="xx startrekpi">j</span> <b class=xx>a</b> – Unmodified <i>Star Trek Pi</i> glyph.
 
-<p><b>D</b> – <i>Star Trek Pi</i> glyph rotated 180°. A break should be added
-in the bottom line, and maybe the top line should be elongated and slightly
-bent to the right.
+  <p><span class="xx"></span> <b class=xx>b</b> –
 
-<p><b>e</b> 
+  <p><span class="xx"></span> <b class=xx>ch</b> – <i>Star Trek Pi</i>
+  glyph <span class="xx startrekpi">l</span> rotated 90° clockwise, and
+  stretched somewhat in the length direction.
 
-<p><b>gh</b> – Unmodified <i>Star Trek Pi</i> glyph.
+  <p><span class="xx"></span> <b class=xx>D</b> – <i>Star Trek Pi</i>
+  glyph <span class="xx startrekpi">m</span> rotated 180°. A break should be
+  added in the bottom line, and maybe the top line should be elongated and
+  slightly bent to the right.
 
-<p><b>H</b> – This glyph is a scrawny little thing. Keep it like that for
-recognizability? Or make it a bit larger to have it fit in better with the
-appearance of the rest of the glyphs?
+  <p><span class="xx"></span> <b class=xx>e</b> – In original <b>pIqaD</b> the
+  glyphs for <b>e</b> and <b>w</b> are quite similar, with the most prominent
+  difference being that the lines of <b>e</b> do taper but remains the same
+  thickness all the way to their tips, while <b>w</b> end in sharp edges.
 
-<p><b>I</b> 
+  <p><span class="xx startrekpi">i</span> <b class=xx>gh</b> –
+  Unmodified <i>Star Trek Pi</i> glyph.
 
-<p><b>j</b> 
+  <p><span class="xx"></span> <b class=xx>H</b> – This glyph is significantly smaller
+  and narrower than all the other glyphs in the original <b>pIqaD</b>, which
+  makes it look sorta out of place. Is this perceived as a distinguishing
+  factor among <b>pIqaD</b> users? If this is the case, then I think the
+  smallness should be preserved, otherwise I'd rather rescale the glyph be more
+  in line with the size of the other characters.
 
-<p><b>l</b> – Unmodified <i>Star Trek Pi</i> glyph.
+  <p><span class="xx"></span> <b class=xx>I</b> –
 
-<p><b>m</b> 
+  <p><span class="xx"></span> <b class=xx>j</b> –
 
-<p><b>n</b> – Unmodified <i>Star Trek Pi</i> glyph.
+  <p><span class="xx startrekpi">e</span> <b class=xx>l</b> – Unmodified <i>Star Trek
+  Pi</i> glyph.
 
-<p><b>ng</b> – Unmodified <i>Star Trek Pi</i> glyph. The glyph has a stronger
-downwards line than in the <i>KLI <b>pIqaDmey</b>.</i>
+  <p><span class="xx"></span> <b class=xx>m</b> –
 
-<p><b>o</b> 
+  <p><span class="xx startrekpi">f</span> <b class=xx>n</b> – Unmodified <i>Star Trek
+  Pi</i> glyph.
 
-<p><b>p</b> 
+  <p><span class="xx startrekpi">l</span> <b class=xx>ng</b> – Unmodified <i>Star Trek
+  Pi</i> glyph. The glyph has a stronger downwards line than in
+  the <i>KLI <b>pIqaDmey</b>.</i>
 
-<p><b>q</b> 
+  <p><span class="xx"></span> <b class=xx>o</b> –
 
-<p><b>Q</b> 
+  <p><span class="xx"></span> <b class=xx>p</b> –
 
-<p><b>r</b> – Unmodified <i>Star Trek Pi</i> glyph.
+  <p><span class="xx"></span> <b class=xx>q</b> –
 
-<p><b>S</b> – Use a modified version of one of the glyphs from gunner controls
-in <i>Star Trek: The Motion Picture</i>?
+  <p><span class="xx"></span> <b class=xx>Q</b> – Some fonts (like <i><b>pIqaD
+  HaSta</b>, <b>pIqaD</b> Mandel</i> and <i>Nokia Pure</i>)
+  use <span class="startrekpi lspace">k</span> from <i>Star Trek Pi</i> as the
+  symbol for <b>Q</b>, but I think this less than ideal. The only real reason
+  for using both <span class="startrekpi
+  lspace">k</span> <i>and</i> <span class="startrekpi lspace">e</span> that I
+  can see, would be that, since both glyphs have been established as on-screen
+  canon, they both need to be included in the typeface for it not to contradict
+  on-screen canon. And though I actually find this a quite compelling argument,
+  I simply think that readability is more important. Also the <b>Q</b> found
+  in <i><b>veS QonoS</b></i> <b>pIqaD</b> looks very different
+  (<span class=ka></span> vs <span class="startrekpi lspace">k</span>).
 
-<p><b>t</b> – (This can be seen as a vertically flipped version of <b>6</b>.)
+  <p><span class="xx startrekpi">g</span> <b class=xx>r</b> – Unmodified <i>Star Trek
+  Pi</i> glyph.
 
-<p><b>tlh</b> 
+  <p><span class="xx"></span> <b class=xx>S</b> – Use a modified version of one of the
+  glyphs from gunner controls in <i>Star Trek: The Motion Picture</i>?
 
-<p><b>u</b> 
+  <p><span class="xx"></span> <b class=xx>t</b> – (This can be seen as a vertically
+  flipped version of <b>6</b>.)
 
-<p><b>v</b> – Unmodified <i>Star Trek Pi</i> glyph. Note, however, that this
-glyph differs from the <i>KLI <b>pIQaDmey</b></i> in that the right vertical
-line descends in <i>Star Trek Pi</i>, while it does not do this
-in <i>KLI <b>pIQaDmey</b>.</i>
+  <p><span class="xx"></span> <b class=xx>tlh</b> –
 
-<p><b>w</b> – Unmodified <i>Star Trek Pi</i> glyph.
+  <p><span class="xx"></span> <b class=xx>u</b> –
 
-<p><b>y</b> – Unmodified <i>Star Trek Pi</i> glyph.
+  <p><span class="xx startrekpi">h</span> <b class=xx>v</b> – Unmodified <i>Star Trek
+  Pi</i> glyph. It is worth noting that the <i>Star Trek Pi</i> glyph looks
+  quite different from the original <b>pIqaD</b>
+  (<span class=startrekpi>h</span> vs <span class=ka style="top:0;"></span>).
 
-<p><b>’</b> – Use the <a href="#qaghwI’">glyph</a> that occurs in signage in
-the <i>Star Trek Enterprise</i> episode “Sleeping Dogs”.
+  <p><span class="xx startrekpi">n</span> <b class=xx>w</b> –
+  Unmodified <i>Star Trek Pi</i> glyph. In original <b>pIqaD</b> the glyphs
+  for <b>e</b> and <b>w</b> are quite similar, with the most prominent
+  difference being that the lines of <b>e</b> do taper but remains the same
+  thickness all the way to their tips, while <b>w</b> end in sharp edges.
 
-<p><b>0</b> – I think this occur on a secondary display on the Klingon bridge
-in <i>Star Trek: The Motion Picture</i>, though unfortunately there’s a lot
-blur, so that probably won’t help much in defining the shape of the glyph.
+  <p><span class="xx startrekpi">m</span> <b class=xx>y</b> –
+  Unmodified <i>Star Trek Pi</i> glyph.
 
-<p><b>1</b> 
+  <p><span class="xx"></span> <b class=xx>’</b> – Use
+  the <a href="#qaghwI’">glyph</a> that occurs in signage in the <i>Star Trek
+  Enterprise</i> episode “Sleeping Dogs”.
 
-<p><b>2</b> 
+  <p><span class="xx"></span> <b class=xx>0</b> – I think this occur on a
+  secondary display on the Klingon bridge in <i>Star Trek: The Motion
+  Picture</i>, though unfortunately there’s a lot blur, so that probably won’t
+  help much in defining the shape of the glyph.
 
-<p><b>3</b> 
+  <p><span class="xx"></span> <b class=xx>1</b> –
 
-<p><b>4</b> – Use glyph from original series D7 batteship by Matt Jefferies?
-Unfortunately <a href="#mandel">the Mandel script</a> have different
-proportions, line widths and angles. So this still requires a manual redrawing
-of the glyph.
+  <p><span class="xx"></span> <b class=xx>2</b> –
 
-<p><b>5</b> 
+  <p><span class="xx"></span> <b class=xx>3</b> –
 
-<p><b>6</b> – (This can be seen as a vertically flipped version of <b>t</b>.)
+  <p><span class="xx"></span> <b class=xx>4</b> – Use glyph from original series D7
+  batteship by Matt Jefferies? Unfortunately <a href="#mandel">the Mandel
+  script</a> have different proportions, line widths and angles. So this still
+  requires a manual redrawing of the glyph.
 
-<p><b>7</b> 
+  <p><span class="xx"></span> <b class=xx>5</b> –
 
-<p><b>8</b> 
+  <p><span class="xx"></span> <b class=xx>6</b> – (This can be seen as a vertically
+  flipped version of <b>t</b>.)
 
-<p><b>9</b> 
+  <p><span class="xx"></span> <b class=xx>7</b> –
 
-<p><b>,;:</b> – This downward pointing triangle should be moved slightly down
-(for optical balance).
+  <p><span class="xx"></span> <b class=xx>8</b> –
 
-<p><b>.!?</b> – This upward pointing triangle should be moved slightly up (for
-optical balance).
+  <p><span class="xx"></span> <b class=xx>9</b> –
 
-<p><b> </b> – Empire symbol. Unmodified <i>Star Trek Pi</i> glyph.
+  <p><span class="xx ka"></span> <b class=xx>,;:</b> – This downward pointing triangle
+  should be moved slightly down (for optical balance).
 
+  <p><span class="xx ka"></span> <b class=xx>.!?</b> – This upward pointing triangle should be
+  moved slightly up (for optical balance).
+
+  <p><span class="startrekpi xx">c</span> <b class=xx>¶</b> – Unmodified <i>Star Trek
+  Pi</i> glyph.
+
+</div>
+
+
+<h2>Font Comparison Chart</h2>
+
+<p>I created the below <b>pIqaD</b> comparison chart, mostly to see how
+different people has interpreted different glyphs, and what the perceived
+common denominators are. For example, I think that the break in the line at the
+bottom of the letter <b>D</b> is an important distinguishing feature, and by
+looking at the font comparison table I can see that most fonts have retained
+that feature, giving my reasoning some extra strength.
+
+<p>Longhand interpretations should be added to the below tables as well.
+
+<figure class="center masked-overflow" style=max-width:100%>
+  <style>
+    table.comparison {
+      margin: 2rem auto;
+    }
+    .comparison td {
+      padding: .0625em !important;
+      text-align: center;
+      vertical-align: bottom;
+      height: 35px;
+      min-width: 30px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .comparison tr:nth-child(2) {
+      height: 65px;
+    }
+    .comparison tr:hover {
+      background: #8883;
+    }
+  </style>
+  <table class="glyphs comparison" style="line-height:1.2;" id=comparison>
+    <tr>
+      <th>
+      <th>a<th>b<th>ch<th>D<th>e<th>gh<th>H<th>I<th>j<th>l<th>m<th>n<th>ng
+      <th>o<th>p<th>q<th>Q<th>r<th>S<th>t<th>tlh<th>u<th>v<th>w<th>y<th>’
+      <th>0<th>1<th>2<th>3<th>4<th>5<th>6<th>7<th>8<th>9<th>,;:<th>.!?<th>¶
+    </tr>
+    <tr class=startrekpi title="Astra Image Corporation’s 10 glyphs used in TNG et al"
+        style="font-size:1.3rem;line-height:1">
+      <th><br>StarTrekPi
+      <td>j<td><td><td><td><td>i<td><td><td><td>k<br>e<td><td>f<td>l
+      <td><td><td><td><td>g<td><td><td><td><td>h<td>n<td>m<td></td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>c</td>
+    </tr>
+    <tr class=ka title="Klingonska Akademien’s pIqaD (by zrajm)"
+        style="font-size:1rem;line-height:1.4">
+      <th>KA
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
+    <tr class=qurgh title="pIqaD by qurgh (by Chris Lipscombe)"
+        style="font-size:1rem;line-height:1.4">
+      <th>qurgh
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
+    <tr class=bing title="Bing pIqaD Medium (by Shawn Steele, 2013; Unicode)"
+        style="font-size:1rem;line-height:1.4">
+      <th><a href="https://web.archive.org/web/20131217063850/http://blogs.msdn.com/b/shawnste/archive/2013/05/20/piqad-font-for-bing-s-klingon-translator.aspx">Bing</a>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
+    <style>.hasta td { padding-bottom: .15rem !important }</style>
+    <tr class=hasta title="Klingon pIqaD HaSta (by Mike Neff, 2004, used in Haynes Bird-of-Prey Manual; Unicode)"
+        style="font-size:1.3rem;line-height:.9">
+      <th><a target=_blank href="https://www.evertype.com/fonts/tlh/">HaSta</a>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
+    <style>.mandel-piqad td { padding-bottom: .15rem !important }</style>
+    <tr class=mandel-piqad title="Klingon pIqaD Mandel (by Mike Neff, 2004; Unicode)"
+        style="font-size:1.3rem;line-height:.9">
+      <th><a target=_blank href="https://www.evertype.com/fonts/tlh/">Mandel</a>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
+    <style>.vahbo td { padding-bottom: .5rem !important }</style>
+    <tr class=vahbo title="Klingon pIqaD vaHbo’ (by Mike Neff, 2004, used in Haynes Bird-of-Prey Manual; Unicode)"
+        style="font-size:1.4rem;line-height:.6">
+      <th><a target=_blank href="https://www.evertype.com/fonts/tlh/">vaHbo’</a>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
+    <style>.comic td { padding-bottom: .2rem !important }</style>
+    <tr class=comic title="Comic Sans pIqaD (presumably by Lieven L. Litaer, from http://klingon.wiki/Word/)"
+        style="font-size:1.2rem;line-height:.9">
+      <th><a target=_blank href="http://klingon.wiki/Word/KolkoS">Comic</a>
+      <td>a<td>b<td>c<td>d<td>e<td>g<td>h<td>i<td>j<td>l<td>m<td>n<td>f
+      <td>o<td>p<td>k<td>q<td>r<td>s<td>t<td>x<td>u<td>v<td>w<td>y<td>z
+      <td><td><td><td><td><td><td><td><td><td><td>,<td>.<td>=
+    </tr>
+    <tr class=code2000 title="Code 2000 (by James Kass, 1998; Unicode)">
+      <th><a target=_blank href="https://www.code2001.com/code2000_page.htm">Code2000</a>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
+    <style>.nokia td { padding-bottom: .3rem !important }</style>
+    <tr class=nokia title="Nokia Pure Headline Klingon Regular (by Dalton Maag, April Fools’s day, 2013; Unicode)"
+        style="font-size:1.4rem;line-height:.7">
+      <th><a target=_blank href="https://web.archive.org/web/20130406025926/http://brandbook.nokia.com/blog/view/item80143/">Nokia</a>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
+    <style>.mopasan td { padding-top: .3rem !important }</style>
+    <tr class=mopasan title="(by Jack Bradley, 2019; xifan hol)"
+        style="font-size:1.9rem;line-height:.5">
+      <th>Mopasan
+      <td>a<td>b<td>c<td>d<td>e<td>g<td>h<td>i<td>j<td>l<td>m<td>n<td>f
+      <td>o<td>p<td>k<td>q<td>r<td>s<td>t<td>x<td>u<td>v<td>w<td>y<td>z
+      <td>0<td>1<td>2<td>3<td>4<td>5<td>6<td>7<td>8<td>9<td>,<td>.<td>!
+    </tr>
+    <style>.din td { padding-top: .4rem !important }</style>
+    <tr title="; Unicode)"
+      class=din style="font-size:1.3rem;line-height:.7">
+      <th>DIn
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
+    <style>.discovery td { padding-bottom: .35rem !important }</style>
+    <tr class=discovery title="; Unicode)"
+        style="font-size:1.1rem;line-height:.8">
+      <th>Discovery
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
+    <tr class=horta title="Horta (by Tim Larson, 2016; Unicode)"
+        style="font-size:1.2rem;line-height:1">
+      <th><a target=_blank href="https://fontlibrary.org/en/font/horta">Horta</a>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
+  </table>
+  <a href="pic/font-comparison.png">
+    <img width=900 src="pic/font-comparison.png">
+  </a>
+  <figcaption>
+    <b>pIqaD</b> comparison charts.
+  </figcaption>
+</figure>
+
+<b>Fonts to add above:</b>
+  ⬤ Klingon Block (xifan-hol, Terrence Donnelly, 1997)
+  ⬤ Klingon Font (xifan-hol)
+  ⬤ KlingonTNG (xifan-hol)
+  ⬤ Zigan Trad (xifan-hol)
+  ⬤ pIqaD qolqoS (Unicode)
+  ⬤ DeSDu’s other font
+
+<h3>Font Info</h3>
+
+<div class=hanging>
+  <p><b>Nokia Pure Headline Klingon</b> (2013) is a classical sans serif
+  typeface created by the font foundry Dalton Maag (commission by Nokia). It
+  adds Klingon characters to the <i>Nokia Pure Headline</i> font. It was
+  published as an April Fool’s joke in 2013, but is still one of the most
+  complete fonts out there with regular, bold and light variants
+  (<a target=_blank
+  href="https://web.archive.org/web/20130406025926/http://brandbook.nokia.com/blog/view/item80143/">Nokia:
+  “Pure Klingon”, 2013</a>).
+</div>
 
 <h1>Episodes</h1>
 
@@ -770,7 +1114,7 @@ list need to be expanded with later movies and series, and each episode need to
 be search for written Klingon.
 
 <p>First column indicates whether or not research has been done for a given
-episode. “✓” indicates that research has been done, and “✗ indicates that
+episode. “✓” indicates that research has been done, and “✗” indicates that
 research still remain to do for that episode.
 
 <style>
@@ -779,14 +1123,16 @@ research still remain to do for that episode.
     border-collapse: collapse;
     line-height: 1.5;
   }
+  table.episodes td,
+  table.episodes th {
+    border: 1px solid #000;
+  }
   table.episodes td {
     padding: 0 .25rem;
-    border: 1px solid #000;
     vertical-align: top;
-    background: #00f4;
   }
   table.episodes .movie {
-      background: #00f8;
+    background: #00f2;
   }
 </style>
 <table class=episodes>
@@ -801,16 +1147,17 @@ research still remain to do for that episode.
   <tr class=movie><td>✓<td>1979-12-07<td>ST1<td>–<td><i>The Motion Picture</i><td>Various Klingon screens (at beginning of movie)
   <tr class=movie><td>✗<td>1984-06-01<td>ST3<td>–<td><i>The Search for Spock</i><td>Maltz, Torg, Kruge, Valkris, IKC Amar, d’k tahg, kellicam, Qapla’
   <tr class=movie><td>✗<td>1986-11-26<td>ST4<td>–<td><i>The Voyage Home</i><td>Klingon Ambassador
-  <tr><td>✗<td>1988-03-21<td>TNG<td>1x20<td>Heart of Glory<td>
+  <tr><td>✗<td>1988-03-21<td>TNG<td>1x20<td>Heart of Glory<td><a href="pic/tng-1x20.jpg">Bridge viewscreen</a>
+  <tr><td>✗<td>1988-05-09<td>TNG<td>1x25<td>Conspiracy<td><a href="pic/tng-1x25.jpg">Display panel</a> (<b>par Hol</b>)
   <tr><td>✗<td>1989-02-06<td>TNG<td>2x08<td>A Matter of Honor<td>
   <tr class=movie><td>✗<td>1989-06-09<td>ST5<td>–<td><i>The Final Frontier</i><td>Klaa, Korrd, Vixis, Qui’Tu (the center of all creation)
   <tr><td>✗<td>1989-06-26<td>TNG<td>2x20<td>The Emissary<td>
   <tr><td>✗<td>1989-07-17<td>TNG<td>2x22<td>Shades of Gray<td>
   <tr><td>✗<td>1990-03-19<td>TNG<td>3x17<td>Sins of the Father<td>
   <tr><td>✗<td>1990-11-05<td>TNG<td>4x07<td>Reunion<td>
-  <tr><td>✗<td>1991-06-17<td>TNG<td>4x26<td>Redemption<td>
+  <tr><td>✗<td>1991-06-17<td>TNG<td>4x26<td>Redemption<td><a href="pic/tng-4x26.jpg">Viewscreen</a> (<b>par Hol</b>)
   <tr><td>✗<td>1991-09-23<td>TNG<td>5x01<td>Redemption II<td>
-  <tr class=movie><td>✗<td>1991-12-06<td>ST6<td>–<td><i>The Undiscovered Country</i><td>Gorkon, Azetbur, Chang, Worf, Kerla, Klingon Ambassador, Praxis, Kronos
+  <tr class=movie><td>✗<td>1991-12-06<td>ST6<td>–<td><i>The Undiscovered Country</i><td>Gorkon, Azetbur, Chang, Worf, Kerla, Klingon Ambassador, Praxis, Kronos, <a href="pic/st6.jpg">map on table</a>
   <tr><td>✗<td>1992-01-06<td>TNG<td>5x10<td>New Ground<td>
   <tr><td>✗<td>1992-03-02<td>TNG<td>5x16<td>Ethics<td>
   <tr><td>✗<td>1992-04-20<td>TNG<td>5x20<td>Cost of Living<td>
@@ -821,14 +1168,14 @@ research still remain to do for that episode.
   <tr><td>✗<td>1993-03-01<td>TNG<td>6x17<td>Birthright: Part 2<td>
   <tr><td>✗<td>1993-05-17<td>TNG<td>6x23<td>Rightful Heir<td>
   <tr><td>✗<td>1994-03-27<td>DS9<td>2x19<td>Blood Oath<td>⇒ <b>maj ram</b>
-  <tr><td>✗<td>1994-04-25<td>TNG<td>7x21<td>Firstborn<td>
+  <tr><td>✗<td>1994-04-25<td>TNG<td>7x21<td>Firstborn<td><a href="pic/tng-7x21.jpg">Banner</a> (<b>par Hol</b>)
   <tr><td>✗<td>1994-10-10<td>DS9<td>3x03<td>The House of Quark<td>
   <tr class=movie><td>✗<td>1994-11-18<td>ST7<td>–<td><i>Generations</i><td>Worf, Lursa, B’Etor
   <tr><td>✗<td>1995-10-02<td>DS9<td>4x01<td>The Way of the Warrior (Part 1)<td>
   <tr><td>✗<td>1995-10-02<td>DS9<td>4x02<td>The Way of the Warrior (Part 2)<td>(???)
-  <tr><td>✗<td>1995-11-20<td>DS9<td>4x08<td>The Sword of Kahless<td>
+  <tr><td>✗<td>1995-11-20<td>DS9<td>4x08<td>The Sword of Kahless<td><a href="pic/ds9-4x08.jpg">Bat’leth inscription</a>
   <tr><td>✗<td>1996-02-12<td>DS9<td>4x14<td>Sons of Mogh<td>
-  <tr><td>✗<td>1996-06-17<td>DS9<td>4x25<td>Broken Link<td>
+  <tr><td>✗<td>1996-06-17<td>DS9<td>4x25<td>Broken Link<td><a href="pic/ds9-4x25.jpg">Wall viewscreen</a> (<b>par Hol</b>)
   <tr><td>✗<td>1996-09-30<td>DS9<td>5x01<td>Apocalype Rising<td>
   <tr><td>✗<td>1996-10-14<td>DS9<td>5x03<td>Looking for par’Mach in All the Wrong Places<td>
   <tr><td>✗<td>1997-02-10<td>DS9<td>5x14<td>In Purgatory’s Shadow (Part 1)<td>
@@ -840,30 +1187,46 @@ research still remain to do for that episode.
   <tr><td>✗<td>1997-10-13<td>DS9<td>6x03<td>Sons and Daughters<td>
   <tr><td>✗<td>1997-10-27<td>DS9<td>6x05<td>Favor the Bold (Part 1)<td>
   <tr><td>✗<td>1997-11-03<td>DS9<td>6x06<td>Sacrifice of Angels (Part 2)<td>
-  <tr><td>✗<td>1997-11-10<td>DS9<td>6x07<td>You Are Cordially Invited…<td>
+  <tr><td>✗<td>1997-11-10<td>DS9<td>6x07<td>You Are Cordially Invited…<td><a href="pic/ds9-6x07-a.jpg">Banner</a>, <a href="pic/ds9-6x07-b.png">sketch of same banner</a> (<b>par Hol</b>)
   <tr><td>✗<td>1998-02-11<td>DS9<td>6x13<td>Far Beyond the Stars<td>
   <tr><td>✗<td>1998-06-17<td>DS9<td>6x26<td>Tears of the Prophets<td>
   <tr><td>✗<td>1998-09-30<td>DS9<td>7x01<td>Image in the Sand<td>
   <tr><td>✗<td>1998-10-07<td>DS9<td>7x02<td>Shadows and Symbols<td>
   <tr><td>✗<td>1998-11-04<td>DS9<td>7x06<td>Treachery, Faith, and the Great River<td>
   <tr><td>✗<td>1998-11-11<td>DS9<td>7x07<td>Once More Unto the Breach<td>
-  <tr><td>✗<td>1999-02-03<td>DS9<td>7x12<td>The Emperor’s New Cloak<td>
+  <tr><td>✗<td>1999-02-03<td>DS9<td>7x12<td>The Emperor’s New Cloak<td><a href="pic/ds9-7x12.jpg">Bridge panel</a> (<b>par Hol</b>)
   <tr><td>✗<td>1999-04-21<td>DS9<td>7x19<td>Strange Bedfellows<td>
   <tr><td>✗<td>1999-04-28<td>DS9<td>7x20<td>The Changing Face of Evil<td>
   <tr><td>✗<td>1999-05-05<td>DS9<td>7x21<td>When It Rains…<td>
-  <tr><td>✗<td>1999-05-12<td>DS9<td>7x22<td>Tacking Into the Wind<td>
+  <tr><td>✗<td>1999-05-12<td>DS9<td>7x22<td>Tacking Into the Wind<td><a href="pic/ds9-7x22.jpg">Bridge display</a> (<b>par Hol</b>)
   <tr><td>✗<td>1999-05-26<td>DS9<td>7x24<td>The Dogs of War<td>
   <tr><td>✗<td>1999-06-02<td>DS9<td>7x25<td>What You Leave Behind (Part 1)<td>
   <tr><td>✗<td>1999-06-02<td>DS9<td>7x26<td>What You Leave Behind (Part 2)<td>(???)
-  <tr><td>✗<td>1999-10-06<td>VOY<td>6x03<td>Barge of the dead<td>
+  <tr><td>✗<td>1999-10-06<td>VOY<td>6x03<td>Barge of the dead<td><a href="pic/voy-6x03.jpg">Klingon document</a> (<b>pIqaD</b>)
   <tr><td>✗<td>2001-02-07<td>VOY<td>7x14<td>Prophecy<td>
-  <tr><td>✗<td>2001-09-26<td>ENT<td>1x01<td>Broken Bow (Part 1)<td>
+  <tr><td>✗<td>2001-09-26<td>ENT<td>1x01<td>Broken Bow (Part 1)<td><a href="pic/ent-1x01.jpg">Wall display</a> (<b>par Hol</b> + mirrored glyphs)
   <tr><td>✗<td>2001-09-26<td>ENT<td>1x02<td>Broken Bow (Part 2)<td>(???)
-  <tr><td>✗<td>2002-01-30<td>ENT<td>1x14<td>Sleeping Dogs<td>A written <b>qaghwI’</b> is seen
-  <tr><td>✗<td>2003-04-09<td>ENT<td>2x19<td>Judgement<td>
+  <tr><td>✗<td>2002-01-30<td>ENT<td>1x14<td>Sleeping Dogs<td><a href="pic/ent-1x14.png">Sign in corridor</a> (<b>par Hol</b> + <b>qaghwI’</b>)
+  <tr><td>✗<td>2003-04-09<td>ENT<td>2x19<td>Judgement<td><a href="pic/ent-2x19.jpg">Banner in courtroom</a> (<b>par Hol</b>?)
   <tr><td>✗<td>2004-11-12<td>ENT<td>4x06<td>The Augments<td>
   <tr><td>✗<td>2005-01-21<td>ENT<td>4x11<td>Observer Effect<td>
   <tr><td>✗<td>2005-02-18<td>ENT<td>4x15<td>Affliction<td>
+  <tr><td>✗<td>2017-09-24<td>DIS<td>1x01<td>The Vulcan Hello<td>
+  <tr><td>✗<td>2017-09-24<td>DIS<td>1x02<td>Battle at the Binary Stars<td>
+  <tr><td>✗<td>2017-10-01<td>DIS<td>1x03<td>Context Is for Kings<td>
+  <tr><td>✗<td>2017-10-08<td>DIS<td>1x04<td>The Butcher’s Knife Cares Not for the Lamb’s Cry<td>
+  <tr><td>✗<td>2017-10-15<td>DIS<td>1x05<td>Choose Your Pain<td>
+  <tr><td>✗<td>2017-10-22<td>DIS<td>1x06<td>Lethe<td>
+  <tr><td>✗<td>2017-10-29<td>DIS<td>1x07<td>Magic to Make the Sanest Man Go Mad<td>
+  <tr><td>✗<td>2017-11-05<td>DIS<td>1x08<td>Si Vis Pacem, Para Bellum<td>
+  <tr><td>✗<td>2017-11-12<td>DIS<td>1x09<td>Into the Forest I Go<td>
+  <tr><td>✗<td>2018-01-07<td>DIS<td>1x10<td>Despite Yourself<td>
+  <tr><td>✗<td>2018-01-14<td>DIS<td>1x11<td>The Wolf Inside<td>
+  <tr><td>✗<td>2018-01-21<td>DIS<td>1x12<td>Vaulting Ambition<td>
+  <tr><td>✗<td>2018-01-28<td>DIS<td>1x13<td>What’s Past Is Prologue<td>
+  <tr><td>✗<td>2018-02-04<td>DIS<td>1x14<td>The War Without, the War Within<td>
+  <tr><td>✗<td>2018-02-11<td>DIS<td>1x15<td>Will You Take My Hand?<td><a href="pic/dis-1x15-a.jpg">Orion snack bar sign</a> and <a href="pic/dis-1x15-b.jpg">T’Sang game </a> (<b>pIqaD</b>)
+  <tr><td>✗<td>2022-01-06<td>PRO<td>1x05<td>Kobayashi<td><a href="pic/pro-1x05.jpg">Label “ration” on box</a> (English in <b>pIqaD</b>)
 </table>
 
 <footer>Written by zrajm, Uppsala, May 2023.</footer>
