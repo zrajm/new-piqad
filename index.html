@@ -105,6 +105,11 @@
   src: url("font/qolqos.woff2");
   unicode-range: U+F8D0-F8FF; /* Unicode */
 }
+@font-face {
+  font-family: "Klingon Block";
+  src: url("font/block.woff2");
+  /*unicode-range: U+F8D0-F8FF; /* Unicode */
+}
 html {
   font-family: sans;
   font-size: 22px;
@@ -200,9 +205,10 @@ figcaption {
   text-align: center;
 }
 .big { font-size: 1.75rem; }
-.comic { font-family: "Comic Sans pIqaD" }
 .bing {  font-family: "Bing pIqaD Medium" }
+.block { font-family: "Klingon Block" }
 .code2000 { font-family: "Code 2000" }
+.comic { font-family: "Comic Sans pIqaD" }
 .din { font-family: "DIn pIqaD" }
 .discovery { font-family: "Discovery pIqaD" }
 .hasta { font-family: "Klingon pIqaD HaSta" }
@@ -961,7 +967,8 @@ to get the name of the creator.
 <figure class="center masked-overflow" style=max-width:100%>
   <style>
     table.comparison {
-      margin: 2rem auto;
+      margin: .5rem;
+      line-height: 1.2;
     }
     .comparison td {
       padding: .0625em !important;
@@ -979,7 +986,7 @@ to get the name of the creator.
       background: #8883;
     }
   </style>
-  <table class="glyphs comparison" style="line-height:1.2;" id=comparison>
+  <table class="glyphs comparison" id=comparison>
     <tr>
       <th>
       <th>a<th>b<th>ch<th>D<th>e<th>gh<th>H<th>I<th>j<th>l<th>m<th>n<th>ng
@@ -1099,6 +1106,13 @@ to get the name of the creator.
       <td><td><td><td><td><td><td><td><td><td><td><td><td>
       <td><td><td><td><td><td><td><td><td><td><td><td><td>
     </tr>
+    <tr class=block title="Klingon Block Normal (XIFAN-HOL-ish font by Terrence Donnelly, 1996)"
+        style="font-size:1.2rem;line-height:.9">
+      <th><a href="https://web.archive.org/web/20050206220033/http://teresh.tdonnelly.org/klinstuf.html">Block</a>
+      <td>A<td>B<td>C<td>D<td>E<td>G<td>H<td>I<td>J<td>L<td>M<td>N<td>F
+      <td>O<td>P<td>K<td>Q<td>R<td>S<td>T<td>X<td>U<td>V<td>W<td>Y<td>Z
+      <td>)<td>!<td>@<td>#<td>$<td>%<td>^<td>&<td>*<td>(<td>&gt;<td>&lt;<td>+
+    </tr>
     <style>
       .lowres td { vertical-align:middle }
       .lowres td p {
@@ -1149,20 +1163,15 @@ to get the name of the creator.
       <td><td><td><td><td><td><td><td><td><td><td><td><td>
     </tr>
   </table>
-  <a href="pic/font-comparison.png">
-    <img width=900 src="pic/font-comparison.png">
-  </a>
   <figcaption>
-    <b>pIqaD</b> comparison charts.
+    <b>pIqaD</b> comparison chart.
   </figcaption>
 </figure>
 
 <b>Fonts to add above:</b>
-  ⬤ Klingon Block (xifan-hol, Terrence Donnelly, 1997)
   ⬤ Klingon Font (xifan-hol)
   ⬤ KlingonTNG (xifan-hol)
   ⬤ Zigan Trad (xifan-hol)
-  ⬤ DeSDu’s other font
 
 <h3>Font Info</h3>
 
