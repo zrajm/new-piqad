@@ -16,6 +16,7 @@
 <link rel=preload href="font/discovery.woff2" as=font type="font/woff2">
 <link rel=preload href="font/horta.woff2" as=font type="font/woff2">
 <link rel=preload href="font/mandel-english.woff2" as=font type="font/woff2">
+<link rel=preload href="font/qolqos.woff2" as=font type="font/woff2">
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>Towards a New pIqaD</title>
 <style>
@@ -93,6 +94,11 @@
   font-family: "English Mandel";
   src: url("font/mandel-english.woff2");
   unicode-range: U+0020-007E; /* Ascii */
+}
+@font-face {
+  font-family: "qolqoS";
+  src: url("font/qolqos.woff2");
+  unicode-range: U+F8D0-F8FF; /* Unicode */
 }
 html {
   font-family: sans;
@@ -202,6 +208,7 @@ figcaption {
 .mandel-piqad { font-family: "Klingon pIqaD Mandel" }
 .mopasan { font-family: "Mopasan Pikad" }
 .nokia { font-family: "Nokia Pure Klingon" }
+.qolqos { font-family: "qolqoS" }
 .qurgh { font-family: "qurgh pIqaD" }
 .startrekpi { font-family: "Star Trek Pi BT" }
 .startrekpi.big { font-size: 2rem; line-height: 1.4 }
@@ -924,12 +931,24 @@ and possibly others).
 
 <h2>Font Comparison Chart</h2>
 
-<p>I created the below <b>pIqaD</b> comparison chart, mostly to see how
-different people has interpreted different glyphs, and what the perceived
-common denominators are. For example, I think that the break in the line at the
-bottom of the letter <b>D</b> is an important distinguishing feature, and by
-looking at the font comparison table I can see that most fonts have retained
-that feature, giving my reasoning some extra strength.
+<p>The following <b>pIqaD</b> comparison chart, is intended to illuminate
+different people has interpreted the different glyphs, and what the perceived
+common denominators are. For example, I think that short break in the lower
+part of line of the letter <b>D</b> is an important distinguishing feature, and
+by looking at the font comparison table we can see that most (though not all)
+font creators seem to agree with this as they have retained that feature,
+giving my reasoning some extra strength.
+
+<p>Included in the table below are all Klingon <b>pIqaD</b> fonts I’ve been
+able to find. Fonts are taken from, among others,
+the <a href="http://klingon.wiki/"><i>Klingon.Wiki</i></a> page
+“<a href="http://klingon.wiki/En/Fonts">Klingon Computer Fonts</a>” and the
+Finnish <a href="https://klingonia.fi/"><i>Klingonia</i></a> site’s
+“<a href="https://klingonia.fi/kirjasimet/">Comparison of pIqaD fonts</a>” (in
+Finnish). In the cases where I have been able to find a web page for the
+original font, the font name links to that site, in the remaining cases I
+instead link to a place where the font is used. Hover over a line in the table
+to get the name of the creator.
 
 <p>Longhand interpretations should be added to the below tables as well.
 
@@ -968,7 +987,7 @@ that feature, giving my reasoning some extra strength.
       <td><td><td><td><td>g<td><td><td><td><td>h<td>n<td>m<td></td>
       <td><td><td><td><td><td><td><td><td><td><td><td><td>c</td>
     </tr>
-    <tr class=ka title="Klingonska Akademien’s pIqaD (Unicode font by zrajm)"
+    <tr class=ka title="Klingonska Akademien’s pIqaD (Unicode font by zrajm, 1999, unicoded 2020)"
         style="font-size:1rem;line-height:1.4">
       <th><a href="http://zrajm.org/nerd/klingon/kapiqad/">KApIqaD</a>
       <td><td><td><td><td><td><td><td><td><td><td><td><td>
@@ -1035,6 +1054,13 @@ that feature, giving my reasoning some extra strength.
       <td><td><td><td><td><td><td><td><td><td><td><td><td>
       <td><td><td><td><td><td><td><td><td><td><td><td><td>
     </tr>
+    <tr class=qolqos title="pIqaD qolqoS Regular (Unicode font by Daniel Dadap, 2018)"
+        style="font-size:1.3rem;line-height:1">
+      <th><a href="">qolqoS</a>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+    </tr>
     <style>.mopasan td { padding-top: .3rem !important }</style>
     <tr class=mopasan title="(xifan-hol font by Jack Bradley, 2019)"
         style="font-size:1.9rem;line-height:.5">
@@ -1057,7 +1083,7 @@ that feature, giving my reasoning some extra strength.
       <th><a href="http://klingon.wiki/En/DiscoveryFont">Discovery</a>
       <td><td><td><td><td><td><td><td><td><td><td><td><td>
       <td><td><td><td><td><td><td><td><td><td><td><td><td>
-      <td><td><td><td><td><td><td><td><td><td><td><td><td>
+      <td><td><td><td><td><td><td><td><td><td><td><td><td>
     </tr>
     <style>
       .lowres td { vertical-align:middle }
@@ -1101,9 +1127,9 @@ that feature, giving my reasoning some extra strength.
       <td><p><td><p><td><p><td><p><td><p><td><p><td><p><td><p><td><p><td><p><td><p><td><p><td><p></td>
       <td><td><td><td><td><td><td><td><td><td><td><td><td></td>
     </tr>
-    <tr class=horta title="Horta (Unicode font by Tim Larson, 2016)"
+    <tr class=horta title="Horta Regular (Unicode font by Tim Larson, 2016)"
         style="font-size:1.2rem;line-height:1">
-      <th><a href="https://fontlibrary.org/en/font/horta">Horta Regular</a>
+      <th><a href="https://fontlibrary.org/en/font/horta">Horta</a>
       <td><td><td><td><td><td><td><td><td><td><td><td><td>
       <td><td><td><td><td><td><td><td><td><td><td><td><td>
       <td><td><td><td><td><td><td><td><td><td><td><td><td>
@@ -1122,7 +1148,6 @@ that feature, giving my reasoning some extra strength.
   ⬤ Klingon Font (xifan-hol)
   ⬤ KlingonTNG (xifan-hol)
   ⬤ Zigan Trad (xifan-hol)
-  ⬤ pIqaD qolqoS (Unicode)
   ⬤ DeSDu’s other font
 
 <h3>Font Info</h3>
