@@ -1,6 +1,8 @@
 -*- org -*-
 
-* [0/1]
+* REMAINING [0/3]
+** TODO Add SVG with preliminary font design
+** TODO Add both versions of pIqaD from veS QonoS to comparison table
 ** TODO Add more images from Lower Decks etc
 * [3/3] FINISHED
 ** DONE Add Buffy episode Seeing Red image
